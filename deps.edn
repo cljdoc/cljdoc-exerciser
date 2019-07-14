@@ -1,0 +1,4 @@
+{:paths ["src"]
+ :aliases {:depstar
+           {:extra-deps
+            {seancorfield/depstar {:mvn/version "0.2.4"}}}}}

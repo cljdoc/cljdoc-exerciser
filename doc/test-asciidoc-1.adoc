@@ -1,0 +1,125 @@
+= Test Asciidoc 1
+:toc:
+:figure-caption!:
+
+== Introduction
+A test asciidoc to exercise cljdoc formatting and features.
+
+== Formatting marks
+
+I have a *strong* feeling that I might be head**strong**.
+
+I am _under_ the impression that that you are th__under__struck by this example.
+
+My `code` was en``coded``ed.
+
+I a ^super^ excited about this ~sub~routine.
+
+== Code blocks
+
+.code-block-title
+[source,clojure]
+----
+;; some sweet clojure code
+
+(defn hello-earthling
+  "Greet an earthling in a believable way."  ;; <1>
+  [name]
+  (println "Hello earthling " (uppercase name))) ;; <2>
+----
+<1> a docstring comes before the arguments
+<2> check with an earthling if uppercasing is soothing
+
+== Images
+This local image should work on github and cljdoc.  According to asciidoctor, images are resolved relative to the document.
+
+Current value of imagesdir:
+
+[subs=attributes+]
+----
+{imagesdir}
+----
+
+image:test-image-1.png[A local test image should appear here]
+
+How about captions, do we display those nicely?
+
+.Test image caption
+image:test-image-1.png[A local test image should appear here]
+
+
+== Admonitions
+
+NOTE: Note that this note is a note.
+
+TIP: Tip the scales with a tip.
+
+IMPORTANT: Important things are said here.
+
+CAUTION: Aren't you a caution?
+
+WARNING: Warning to the wise.
+
+== Tables
+
+Asciidoc tables are quite full featured, here's a simple one:
+
+|===
+| Heading 1 | Heading 2
+
+| col1, row1
+| col2, row1
+
+| col1, row2
+| col2, row2
+
+| col1, row3
+| col2, row3
+
+| col1, row4
+| col2, row4
+|===
+
+Here's the same table with a title
+
+.This time with a title
+|===
+| Heading 1 | Heading 2
+
+| col1, row1
+| col2, row1
+
+| col1, row2
+| col2, row2
+|===
+
+And here's a nested table example from asciidoctor user manual:
+
+[cols="1,2a"]
+|===
+| Col 1 | Col 2
+
+| Cell 1.1
+| Cell 1.2
+
+| Cell 2.1
+| Cell 2.2
+
+[cols="2,1"]
+!===
+! Col1 ! Col2
+
+! C11
+! C12
+
+!===
+
+|===
+
+
+== Links
+
+These are links will go to cljdoc.org:
+
+1. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3[A link to cljdoc-exerciser.core/excercise3]
+2. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core[A link to cljdoc-exerciser.core]
