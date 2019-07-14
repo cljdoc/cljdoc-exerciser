@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# inspired by https://github.com/lambdaisland/kaocha/blob/master/bin/release
+
+set -euo pipefail
+
+if [[ ! -z "$(git status --porcelain)" ]]; then
+    echo "Repo is not clean."
+    exit 1
+fi
+
+VERSION="1.0.$(git rev-list --count HEAD)"
+SCM_TAG="$(git rev-parse HEAD)"
+
+git tag v$VERSION
+git push --tags
+
+mvn versions:set-scm-tag -DnewTag=${SCM_TAG} -DgenerateBackupPoms=false
+mvn versions:set -DnewVersion=${VERSION} -DgenerateBackupPoms=false
+
+#mvn deploy
+
+#git add pom.xml
+#git commit -m "Update versions in pom.xml"
+#git push
