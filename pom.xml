@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>lread</groupId>
   <artifactId>cljdoc-exerciser</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.6</version>
   <name>cljdoc-exerciser</name>
   <dependencies>
     <dependency>
@@ -26,7 +26,7 @@
   <scm>
       <connection>scm:git:git@github.com:lread/cljdoc-exerciser.git</connection>
       <developerConnection>scm:git:git@github.com:lread/cljdoc-exerciser.git</developerConnection>
-      <tag>a4012baf3af5f1aaea547830ae753869276f3856</tag>
+      <tag>2ca32542c8a60ef4a6209947f1d9f499e20c8b0f</tag>
       <url>git@github.com:lread/cljdoc-exerciser</url>
   </scm>
   <repositories>

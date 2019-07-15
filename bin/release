@@ -9,17 +9,16 @@ if [[ ! -z "$(git status --porcelain)" ]]; then
     exit 1
 fi
 
-VERSION="1.0.$(git rev-list --count HEAD)"
-SCM_TAG="$(git rev-parse HEAD)"
+bin/prep_release
 
-git tag v$VERSION
+echo "Tagging git repo"
+git tag v$(bin/generate_version)
 git push --tags
 
-mvn versions:set-scm-tag -DnewTag=${SCM_TAG} -DgenerateBackupPoms=false
-mvn versions:set -DnewVersion=${VERSION} -DgenerateBackupPoms=false
-
+echo "Deploying to clojars"
 mvn deploy
 
+echo "Update pom.xml in git repo"
 git add pom.xml
 git commit -m "Update versions in pom.xml"
 git push
