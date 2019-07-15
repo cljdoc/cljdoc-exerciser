@@ -1,6 +1,7 @@
 = Test Asciidoc 1
 :toc:
 :figure-caption!:
+:icons: font
 
 == Introduction
 A test asciidoc to exercise cljdoc formatting and features.
@@ -13,7 +14,7 @@ I am _under_ the impression that that you are th__under__struck by this example.
 
 My `code` was en``coded``ed.
 
-I a ^super^ excited about this ~sub~routine.
+I am ^super^ excited about this ~sub~routine.
 
 == Code blocks
 
