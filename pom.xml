@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>lread</groupId>
+  <groupId>cljdoc</groupId>
   <artifactId>cljdoc-exerciser</artifactId>
   <version>1.0.10</version>
   <name>cljdoc-exerciser</name>
@@ -24,10 +24,10 @@
     </resources>
   </build>
   <scm>
-      <connection>scm:git:git@github.com:lread/cljdoc-exerciser.git</connection>
-      <developerConnection>scm:git:git@github.com:lread/cljdoc-exerciser.git</developerConnection>
+      <connection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</connection>
+      <developerConnection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</developerConnection>
       <tag>08635bbef7b1abbf4fa746f9dae9ce22d608ab30</tag>
-      <url>git@github.com:lread/cljdoc-exerciser</url>
+      <url>git@github.com:cljdoc/cljdoc-exerciser</url>
   </scm>
   <repositories>
     <repository>

@@ -50,7 +50,7 @@
 
   Maybe we want to link to a cljdoc article.  How do we do that?
 
-  [my test article](/d/lread/cljdoc-exerciser/CURRENT/doc/asciidoc-1)
+  [my test article](/d/cljdoc/cljdoc-exerciser/CURRENT/doc/asciidoc-1)
 
 
   **Wikilinks**
@@ -66,7 +66,7 @@
 
   Will one of my local images show up? I certainly hope so.
 
-  ![my local test image should appear here](/d/lread/cljdoc-exerciser/CURRENT/doc/test-image-1.png)
+  ![my local test image should appear here](/d/cljdoc/cljdoc-exerciser/CURRENT/doc/test-image-1.png)
 
   An external image should work fine though?:
 
