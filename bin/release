@@ -28,4 +28,4 @@ git push
 echo "Trigger build on cljdoc"
 GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout)
 ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
-curl -X POST -d project=${GROUP_ID/}${ARTIFACT_ID} -d version=${VERSION} https://cljdoc.org/api/request-build2
+curl -X POST -d project=${GROUP_ID}/${ARTIFACT_ID} -d version=${VERSION} https://cljdoc.org/api/request-build2
