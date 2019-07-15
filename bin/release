@@ -11,8 +11,10 @@ fi
 
 bin/prep_release
 
+VERSION=$(bin/generate_version)
+
 echo "Tagging git repo"
-git tag v$(bin/generate_version)
+git tag v${VERSION}
 git push --tags
 
 echo "Deploying to clojars"
@@ -22,3 +24,8 @@ echo "Update pom.xml in git repo"
 git add pom.xml
 git commit -m "Update versions in pom.xml"
 git push
+
+echo "Trigger build on cljdoc"
+GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout)
+ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
+curl -X POST -d project=${GROUP_ID/}${ARTIFACT_ID} -d version=${VERSION} https://cljdoc.org/api/request-build2
