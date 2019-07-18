@@ -1,7 +1,6 @@
 = Test Asciidoc 1
 :toc:
 :figure-caption!:
-:icons: font
 
 == Introduction
 A test asciidoc to exercise cljdoc formatting and features.
@@ -50,16 +49,17 @@ image:test-image-1.png[A local test image should appear here]
 
 
 == Admonitions
+From most serious to least:
+
+IMPORTANT: Important things are said here.
+
+WARNING: Warning to the wise.
+
+CAUTION: Aren't you a caution?
 
 NOTE: Note that this note is a note.
 
 TIP: Tip the scales with a tip.
-
-IMPORTANT: Important things are said here.
-
-CAUTION: Aren't you a caution?
-
-WARNING: Warning to the wise.
 
 == Tables
 
@@ -117,6 +117,74 @@ And here's a nested table example from asciidoctor user manual:
 
 |===
 
+Here's a table with custom sizing:
+
+[cols="10,40,20,~",options="header"]
+|====
+|10% width
+|40% width
+|20% width
+|remaining
+
+|a
+|b
+|c
+|d
+
+|e
+|f
+|g
+|h
+
+|i
+|j
+|k
+|l
+
+|m
+|n
+|o
+|p
+|====
+
+An autowidth table will only be as wide as it needs to be.footnoteref:[file,grabbed from asciidoctor user manual]
+
+[%autowidth]
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
+
+== Drawings
+
+Do we support svgbob? If so, this sample from the svgbob demo site won't look like ASCII art.
+
+[svgbob]
+....
+              .─.
+             ( 0 )
+              `-'
+            /     \
+           /       \
+          V         V
+         .─.         .─.
+        ( 1 )       ( 4 )
+         `-'         `-' .
+       /   \         |  \ `.
+      /     \        |   \  `.
+     V       V       |    \   `.
+    .─.      .─.     V     V    V
+   ( 2 )    ( 3 )    .─.   .─.   .─.
+    `─'      `─'    ( 5 ) ( 6 ) ( 7 )
+                     `─'   `─'   `─'
+....
 
 == Links
 

@@ -1,2 +1,0 @@
-{:cljdoc.doc/tree [["Readme" {:file "README.md"}]
-                   ["asciidoc 1" {:file "doc/test-asciidoc-1.adoc"}]]}
