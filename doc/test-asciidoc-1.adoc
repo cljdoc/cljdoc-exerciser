@@ -61,6 +61,70 @@ NOTE: Note that this note is a note.
 
 TIP: Tip the scales with a tip.
 
+And how do admonitions look with some code in them?
+
+[IMPORTANT]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+[WARNING]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+[CAUTION]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+
+[NOTE]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+[TIP]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+
 == Tables
 
 Asciidoc tables are quite full featured, here's a simple one:
@@ -147,7 +211,7 @@ Here's a table with custom sizing:
 |p
 |====
 
-An autowidth table will only be as wide as it needs to be.footnoteref:[file,grabbed from asciidoctor user manual]
+An autowidth table will only be as wide as it needs to be.footnote:[file,grabbed from asciidoctor user manual]
 
 [%autowidth]
 |===
