@@ -16,7 +16,7 @@ My `code` was en``coded``ed.
 I am ^super^ excited about this ~sub~routine.
 
 == Code blocks
-
+Here we have some clojure code:
 .code-block-title
 [source,clojure]
 ----
@@ -29,6 +29,18 @@ I am ^super^ excited about this ~sub~routine.
 ----
 <1> a docstring comes before the arguments
 <2> check with an earthling if uppercasing is soothing
+
+I we specify `clojure-repl` as our language, we can even highlight a repl session:
+[source,clojure-repl]
+----
+user=> (require '[clojure.string :as string])
+nil
+user=> (string/reverse "step on no pets")
+"step on no pets"
+user=> (reduce + 0 [1 2 3 4 5 6 7 8 6])
+42
+user=>
+----
 
 == Images
 This local image should work on github and cljdoc.  According to asciidoctor, images are resolved relative to the document.
