@@ -1,0 +1,4 @@
+{:cljdoc.doc/tree [["Readme" {:file "README.md"}]
+                   ["Asciidoc tests" {:file "doc/overview.adoc"}
+                    ["cljdoc features" {:file "doc/tests/cljdoc-features.adoc"}]
+                    ["asciidoctor user manual" {:file "doc/tests/asciidoctor-user-manual.adoc"}]]]}

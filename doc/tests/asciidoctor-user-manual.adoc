@@ -36,7 +36,7 @@ Sarah White <https://github.com/graphitefriction[@graphitefriction]>; Dan Allen 
 :table-caption!:
 :example-caption!:
 :figure-caption!:
-:imagesdir: ../images
+:imagesdir: ../../images/asciidoctor
 :includedir: _includes
 :underscore: _
 :adp: AsciiDoc Python

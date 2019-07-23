@@ -1,6 +1,7 @@
-= Test Asciidoc 1
+= cljdoc features
 :toc:
 :figure-caption!:
+:imagesdir: ../../images
 
 == Introduction
 A test asciidoc to exercise cljdoc formatting and features.
