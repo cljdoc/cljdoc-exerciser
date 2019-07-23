@@ -48,14 +48,14 @@
 
   **Links**
 
-  Maybe we want to link to a cljdoc article.  How do we do that?
+  Maybe we want to link to a cljdoc article:
 
-  [my test article](/d/lread/cljdoc-exerciser/CURRENT/doc/asciidoc-1)
-
+  [cljdoc features article on cljdoc.org](https://cljdoc.org/d/lread/cljdoc-exerciser/1.0.26/api/cljdoc-exerciser.core)
 
   **Wikilinks**
 
   Wikilinks are a cljdoc extension and allow you to link to api functions.
+  They only work in docstrings.
 
   Let's link to the [[exercise1]] function in this namespace."
   []
@@ -66,9 +66,9 @@
 
   Will one of my local images show up? I certainly hope so.
 
-  ![my local test image should appear here](/d/lread/cljdoc-exerciser/CURRENT/doc/test-image-1.png)
+  ![my local test image should appear here](images/test-image-1.png \"my local test image text\")
 
-  An external image should work fine though?:
+  An external image should work fine too:
 
   ![an external image should appear here](https://dummyimage.com/300x100/000000/fff&text=an+external+image)"
   [x y z])

@@ -18,6 +18,7 @@ I am ^super^ excited about this ~sub~routine.
 
 == Code blocks
 Here we have some clojure code:
+
 .code-block-title
 [source,clojure]
 ----
@@ -31,7 +32,7 @@ Here we have some clojure code:
 <1> a docstring comes before the arguments
 <2> check with an earthling if uppercasing is soothing
 
-I we specify `clojure-repl` as our language, we can even highlight a repl session:
+I we specify `clojure-repl` to asciidoctor as our language, we can invoke special highlighting for a repl session:
 [source,clojure-repl]
 ----
 user=> (require '[clojure.string :as string])
@@ -44,9 +45,9 @@ user=>
 ----
 
 == Images
-This local image should work on github and cljdoc.  According to asciidoctor, images are resolved relative to the document.
+This local image should work on github and cljdoc.  According to asciidoctor, images are resolved relative to the document or at the path specified by the `imagesdir` asciidoctor attribute.
 
-Current value of imagesdir:
+Current value of `imagesdir`:
 
 [subs=attributes+]
 ----
@@ -241,7 +242,7 @@ An autowidth table will only be as wide as it needs to be.footnote:[file,grabbed
 
 == Drawings
 
-Do we support svgbob? If so, this sample from the svgbob demo site won't look like ASCII art.
+Do we support svgbob? Not yet but if we someday decide to, this sample from the svgbob demo site won't look like ASCII art.
 
 [svgbob]
 ....
@@ -265,7 +266,9 @@ Do we support svgbob? If so, this sample from the svgbob demo site won't look li
 
 == Links
 
-These are links will go to cljdoc.org:
+As far as I can figure, Asciidoctor does not support root relative http links - so we need to fully qualify links to our APIs:
 
 1. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3[A link to cljdoc-exerciser.core/excercise3]
 2. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core[A link to cljdoc-exerciser.core]
+
+If they are not already, these will soon be converted to root relative links by cljdoc to support local testing.

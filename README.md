@@ -16,8 +16,6 @@ Version scheme is defined in [bin\generate_version](bin/generate_version)
 ## Some Tests
 
 ### Images
-When bringing in a README.md for with `cljdoc.edn`, its will be referenced from `doc/README.md`. Are image links automatically fixed up?
-
 Let's link to an image in a subdir with markdown syntax:
 
 ![alt for test image 1](images/test-image-1.png "test image 1 text")
@@ -28,7 +26,7 @@ And again with html syntax:
 
 ### A little CommonMark
 
-Clojure languages we understand are `clj`, `clojure` and `cljs.`. From a formatting perspective they are all equivalent.  Here we've specified `cljs` as our language:
+cljdoc recognizes `clj`, `clojure` and `cljs` language identifiers. From a formatting perspective they are all equivalent.  Here we've specified `cljs` as our language:
 ```cljs
 (def v *clojurescript-version*)
 (js/alert (str "Hello from ClojureScript v" v))
@@ -44,4 +42,4 @@ user=> (- 1 2 3 4)
 -8
 ```
 
-CommonMark is also supported in docstrings, have a look at [[cljdoc-exerciser/core]] for some more examples.
+CommonMark is also supported in docstrings, have a look at [cljdoc-exerciser namespace on cljdoc.org](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core) for some more examples.
