@@ -240,6 +240,39 @@ An autowidth table will only be as wide as it needs to be.footnote:[file,grabbed
 |Cell in column 3, row 2
 |===
 
+== Text Roles
+
+=== size
+Text can be [big]#Big# or [small]#small#.
+
+=== lines
+
+We can add [underline]#underline#, [overline]#overline# and
+[line-through]#line-through#.
+
+=== foreground color
+
+We have a choice of 16 foreground colors: [aqua]#aqua# [black]#black#
+[blue]#blue# [fuchsia]#fuschia# [gray]#gray# [green]#green# [lime]#lime#
+[maroon]#maroon# [navy]#navy# [olive]#olive# [purple]#purple# [red]#red#
+[silver]#silver# [teal]#teal# [white]#white# [yellow]#yellow#.
+
+=== background color
+
+The same 16 colors are available as background colors: [aqua-background]#aqua#
+[black-background]#black# [blue-background]#blue# [fuchsia-background]#fuschia#
+[gray-background]#gray# [green-background]#green# [lime-background]#lime#
+[maroon-background]#maroon# [navy-background]#navy# [olive-background]#olive#
+[purple-background]#purple# [red-background]#red# [silver-background]#silver#
+[teal-background]#teal# [white-background]#white# [yellow-background]#yellow#
+
+=== combinations
+Roles can be combined, some examples:
+[white black-background]#white on black-background#
+[red yellow-background]#red on yellow background#
+[big blue line-through fuchsia-background]#big blue line-through maroon-background#
+
+
 == Drawings
 
 Do we support svgbob? Not yet but if we someday decide to, this sample from the svgbob demo site won't look like ASCII art.
