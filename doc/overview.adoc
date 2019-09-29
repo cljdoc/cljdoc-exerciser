@@ -1,6 +1,11 @@
 = Overview
 
-Here we exercise cljdoc's handling of asciidocs.
+Here we exercise cljdoc's handling of AsciiDoctor and CommonMark documents.
 
-. link:tests/cljdoc-features.adoc[cljdoc features] - exercises features authors publishing to cljdoc might be likely to use.
-. link:tests/asciidoc-user-manual.adoc[asciidoctor user manual] - for a more comprehensive visual inspection, the asciidoc user manual describes and exercises most asciidoc features.
+. link:tests/adoc-features.adoc[cljdoc asciidoctor features] - features
+  authors publishing AsciiDoctor docs to cljdoc might be likely to use.
+. link:tests/md-features.md[cljdoc markdown features] - features authors
+  publishing CommonMark docs to cljdoc might be likely to use.
+. link:tests/asciidoctor-user-manual.adoc[asciidoctor user manual] - for
+  comprehensive visual inspection, the asciidoc user manual describes and
+  exercises most AsciiDoctor features.

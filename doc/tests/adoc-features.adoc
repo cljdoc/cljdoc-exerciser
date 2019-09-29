@@ -1,23 +1,57 @@
-= cljdoc features
+= cljdoc AsciiDoctor features
 :toc:
+:toclevels: 6
 :figure-caption!:
 :imagesdir: ../../images
 
 == Introduction
-A test asciidoc to exercise cljdoc formatting and features.
+A test AsciiDoctor doc to exercise cljdoc formatting and features.
+
+This document exists to compare basic features with CommonMark. If you edit this
+doc please also edit its link:md-features.md[CommonMark counterpart].
+
+AsciiDoctor offers a very rich set of formatting options, see the
+link:asciidoctor-user-manual.adoc[AsciiDoctor User Manual] for all the details.
 
 == Formatting marks
 
 I have a *strong* feeling that I might be head**strong**.
 
-I am _under_ the impression that that you are th__under__struck by this example.
+If I use _italics_ does that make things more g__lean__able?
+
+Does this [.line-through]#strike# you as a [.line-through]##cross##word?
 
 My `code` was en``coded``ed.
 
 I am ^super^ excited about this ~sub~routine.
 
 == Code blocks
-Here we have some clojure code:
+Here we have some clojure code :
+
+[source,clojure]
+----
+;; some sweet clojure code
+
+(defn hello-earthling
+  "Greet an earthling in a believable way."
+  [name]
+  (println "Hello earthling " (uppercase name)))
+----
+
+If we specify `clojure-repl` to asciidoctor as our language, we can invoke special highlighting for a repl session:
+
+[source,clojure-repl]
+----
+user=> (require '[clojure.string :as string])
+nil
+user=> (string/reverse "step on no pets")
+"step on no pets"
+user=> (reduce + 0 [1 2 3 4 5 6 7 8 6])
+42
+user=>
+----
+
+Asciidoctor also supports callouts and titles:
 
 .code-block-title
 [source,clojure]
@@ -32,17 +66,55 @@ Here we have some clojure code:
 <1> a docstring comes before the arguments
 <2> check with an earthling if uppercasing is soothing
 
-I we specify `clojure-repl` to asciidoctor as our language, we can invoke special highlighting for a repl session:
-[source,clojure-repl]
+== Lists
+
+Bulleted:
+
+* apples
+* orange
+** temple
+** navel
+* bananas
+
+Numbered:
+
+. first
+.. a
+.. b
+... x
+... y
+. second
+. third
+
+Mixed:
+
+* Hey
+.. one
+.. two
+* Ho
+** Ho
+... uno
+... dos
+
+With code:
+
+. one
+.. two
++
 ----
-user=> (require '[clojure.string :as string])
-nil
-user=> (string/reverse "step on no pets")
-"step on no pets"
-user=> (reduce + 0 [1 2 3 4 5 6 7 8 6])
-42
-user=>
+I am a code block
 ----
+
+.. three
+
+
+== Quoted text
+
+____
+Quoted text.
+
+Another paragraph in quote.
+____
 
 == Images
 This local image should work on github and cljdoc.  According to asciidoctor, images are resolved relative to the document or at the path specified by the `imagesdir` asciidoctor attribute.
@@ -56,92 +128,49 @@ Current value of `imagesdir`:
 
 image:test-image-1.png[A local test image should appear here]
 
+Here's a remote image:
+
+image:https://picsum.photos/id/1041/400/100[A remote test image should appear here]
+
 How about captions, do we display those nicely?
 
 .Test image caption
 image:test-image-1.png[A local test image should appear here]
 
+== Links
 
-== Admonitions
-From most serious to least:
+Local link: link:md-features.md[cljdoc markdown features]
 
-IMPORTANT: Important things are said here.
+External link: https://asciidoctor.org/docs/asciidoc-vs-markdown[AsciiDoc vs Markdown]
 
-WARNING: Warning to the wise.
-
-CAUTION: Aren't you a caution?
-
-NOTE: Note that this note is a note.
-
-TIP: Tip the scales with a tip.
-
-And how do admonitions look with some code in them?
-
-[IMPORTANT]
-====
-This admonition has some `code` in it.
-
-[source,clojure]
-----
-(how
-  (does
-    (this "look?)))
-----
-====
-
-[WARNING]
-====
-This admonition has some `code` in it.
-
-[source,clojure]
-----
-(how
-  (does
-    (this "look?)))
-----
-====
-
-[CAUTION]
-====
-This admonition has some `code` in it.
-
-[source,clojure]
-----
-(how
-  (does
-    (this "look?)))
-----
-====
+Link to anchor: <<anchorid>>
 
 
-[NOTE]
-====
-This admonition has some `code` in it.
+As far as I can figure, Asciidoctor does not support root relative http links - so we need to fully qualify links to our APIs:
 
-[source,clojure]
-----
-(how
-  (does
-    (this "look?)))
-----
-====
+1. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3[A link to cljdoc-exerciser.core/excercise3]
+2. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core[A link to cljdoc-exerciser.core]
 
-[TIP]
-====
-This admonition has some `code` in it.
+If they are not already, these will soon be converted to root relative links by cljdoc to support local testing.
 
-[source,clojure]
-----
-(how
-  (does
-    (this "look?)))
-----
-====
+== Headings
+=== Level 3
+==== Level 4
+===== Level 5
+====== Level 6
 
+
+== Horizontal rule
+
+This is how a horizontal rule is rendered:
+
+'''
 
 == Tables
 
-Asciidoc tables are quite full featured, here's a simple one:
+Asciidoc tables are quite full featured.
+
+Here is the most basic example:
 
 |===
 | Heading 1 | Heading 2
@@ -157,6 +186,25 @@ Asciidoc tables are quite full featured, here's a simple one:
 
 | col1, row4
 | col2, row4
+|===
+
+Sophisticated alignment support is also available, here is a basic example:
+
+[cols=">,^,<"]
+|===
+| Right aligned col | Centered col | Left aligned Col
+
+| am
+| is
+| any
+
+| I
+| this
+| thing
+
+| right?
+| centered?
+| left?
 |===
 
 Here's the same table with a title
@@ -240,6 +288,94 @@ An autowidth table will only be as wide as it needs to be.footnote:[file,grabbed
 |Cell in column 3, row 2
 |===
 
+== Emojis
+
+Asciidoctor does not support codes like GitHub flavored markdown does, but it does have support for icons when font-awesome is enabled.
+
+icon:heart[] icon:heart[size=2x]
+
+
+[#anchorid]
+== Anchored heading
+And here we are.
+
+== Admonitions
+From most serious to least:
+
+IMPORTANT: Important things are said here.
+
+WARNING: Warning to the wise.
+
+CAUTION: Aren't you a caution?
+
+NOTE: Note that this note is a note.
+
+TIP: Tip the scales with a tip.
+
+And how do admonitions look with some code in them?
+
+[IMPORTANT]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+[WARNING]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+[CAUTION]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+
+[NOTE]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+[TIP]
+====
+This admonition has some `code` in it.
+
+[source,clojure]
+----
+(how
+  (does
+    (this "look?)))
+----
+====
+
+
 == Text Roles
 
 === size
@@ -296,12 +432,3 @@ Do we support svgbob? Not yet but if we someday decide to, this sample from the 
     `─'      `─'    ( 5 ) ( 6 ) ( 7 )
                      `─'   `─'   `─'
 ....
-
-== Links
-
-As far as I can figure, Asciidoctor does not support root relative http links - so we need to fully qualify links to our APIs:
-
-1. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3[A link to cljdoc-exerciser.core/excercise3]
-2. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core[A link to cljdoc-exerciser.core]
-
-If they are not already, these will soon be converted to root relative links by cljdoc to support local testing.

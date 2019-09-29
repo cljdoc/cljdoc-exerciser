@@ -48,9 +48,8 @@
 
   **Links**
 
-  Maybe we want to link to a cljdoc article:
-
-  [cljdoc features article on cljdoc.org](https://cljdoc.org/d/lread/cljdoc-exerciser/1.0.26/api/cljdoc-exerciser.core)
+  For more more options see
+  [the markdown features article](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/doc/tests/md-features.md).
 
   **Wikilinks**
 

@@ -12,34 +12,3 @@ It should be extended as the cljdoc community sees fit.
 | [bin/prep_release](bin/prep_release) | to prep for release only, run this for local testing   |
 
 Version scheme is defined in [bin\generate_version](bin/generate_version)
-
-## Some Tests
-
-### Images
-Let's link to an image in a subdir with markdown syntax:
-
-![alt for test image 1](images/test-image-1.png "test image 1 text")
-
-And again with html syntax:
-
-<img src="images/test-image-1.png" alt="alt for html test image 1"/>
-
-### A little CommonMark
-
-cljdoc recognizes `clj`, `clojure` and `cljs` language identifiers. From a formatting perspective they are all equivalent.  Here we've specified `cljs` as our language:
-```cljs
-(def v *clojurescript-version*)
-(js/alert (str "Hello from ClojureScript v" v))
-```
-
-If we specify a language of `clojure-repl` we get repl-smart formatting:
-```clojure-repl
-user=> (+ 1 2 3 4)
-10
-user=> (* 1 2 3 4)
-24
-user=> (- 1 2 3 4)
--8
-```
-
-CommonMark is also supported in docstrings, have a look at [cljdoc-exerciser namespace on cljdoc.org](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core) for some more examples.
