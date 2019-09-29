@@ -49,7 +49,7 @@
   **Links**
 
   For more more options see
-  [the markdown features article](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/doc/tests/md-features.md).
+  [the CommonMark features article](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features).
 
   **Wikilinks**
 

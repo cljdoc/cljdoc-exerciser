@@ -106,7 +106,7 @@ Local link: [cljdoc asciidoc features](adoc-features.adoc)
 
 External link: [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 
-Link to anchor: link:#anchorid[Anchored heading]
+Link to anchor: [Anchored heading](#anchorid)
 
 Note: WikiLinks to api functions do not work here, they only work in doc strings.
 
