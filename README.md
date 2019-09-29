@@ -1,5 +1,7 @@
 # cljdoc-exerciser
 
+[![cljdoc badge](https://cljdoc.org/badge/lread/cljdoc-exerciser)](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT)
+
 This is a test project to exercise various cljdoc features and formatting.
 
 It should be extended as the cljdoc community sees fit.
