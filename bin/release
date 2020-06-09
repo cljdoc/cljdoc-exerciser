@@ -4,17 +4,22 @@
 
 set -euo pipefail
 
-if [[ ! -z "$(git status --porcelain)" ]]; then
+if [[ -n "$(git status --porcelain)" ]]; then
     echo "Repo is not clean."
     exit 1
 fi
 
 bin/prep_release
 
-VERSION=$(bin/generate_version)
+VERSION="v$(bin/generate_version)"
+echo "Tagging repo with: ${VERSION}"
 
-echo "Tagging git repo"
-git tag v${VERSION}
+if [ "$(git tag -l "${VERSION}")" ]; then
+    echo "Git repo already tagged, probably from previous failed run."
+else
+    echo "Tagging git repo"
+    git tag "${VERSION}"
+fi
 git push --tags
 
 echo "Deploying to clojars"
@@ -26,6 +31,6 @@ git commit -m "Update versions in pom.xml"
 git push
 
 echo "Trigger build on cljdoc"
-GROUP_ID=$(mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout)
-ARTIFACT_ID=$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)
-curl -X POST -d project=${GROUP_ID}/${ARTIFACT_ID} -d version=${VERSION} https://cljdoc.org/api/request-build2
+GROUP_ID="$(mvn help:evaluate -Dexpression=project.groupId -q -DforceStdout)"
+ARTIFACT_ID="$(mvn help:evaluate -Dexpression=project.artifactId -q -DforceStdout)"
+curl -X POST -d project="${GROUP_ID}/${ARTIFACT_ID}" -d version="${VERSION}" https://cljdoc.org/api/request-build2
