@@ -1,4 +1,5 @@
-(ns cljdoc-exerciser.core)
+(ns cljdoc-exerciser.core
+  "Here we look at cljdoc features for APIs")
 
 (defn exercise1
   "Will someone ever link to me?"
@@ -48,8 +49,13 @@
 
   **Links**
 
-  For more more options see
-  [the CommonMark features article](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features).
+  An external link to [the CommonMark website](https://commonmark.org/).
+
+  If referencing a cljdoc article, use relative syntax so that the link will work locally during local testing.
+  For example: [the cljdoc-exerciser CommonMark features article](/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features).
+
+  There is an awkwardness here. If viewing from GitHub, I'd probably want to see the article from the GitHub repo rather
+  than the cljdoc rendered version.
 
   **Wikilinks**
 
