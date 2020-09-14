@@ -3,8 +3,18 @@
 set -euo pipefail
 
 if [[ -n "$(git status --porcelain)" ]]; then
-    echo "Repo is not clean."
+    echo "Error: Repo is not clean."
     exit 1
+fi
+
+if [[ -z "${CLOJARS_USERNAME:-}" ]]; then
+   echo "Error: CLOJARS_USERNAME environment variable not set"
+   exit 1
+fi
+
+if [[ -z "${CLOJARS_PASSWORD:-}" ]]; then
+   echo "Error: CLOJARS_PASSWORD environment variable not set"
+   exit 1
 fi
 
 rm -rf target
