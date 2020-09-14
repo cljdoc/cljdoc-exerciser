@@ -8,9 +8,9 @@ It should be extended as the cljdoc community sees fit.
 
 ## Building & Releasing
 
-| Run                                  | To                                                     |
-| :-------------------                 | :----------------------------------------------------- |
-| [bin/release](bin/release)           | to build and deploy to clojars                         |
-| [bin/prep_release](bin/prep_release) | to prep for release only, run this for local testing   |
+| Run                                        | To                                                     |
+| :-------------------                       | :----------------------------------------------------- |
+| [script/install](script/install)           | install to local maven repository, for testing         |
+| [script/release](sript/release)            | build and deploy to clojars                            |
 
-Version scheme is defined in [bin\generate_version](bin/generate_version)
+Version scheme is defined in [script\generate_version](script/generate_version)

@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+if [[ -n "$(git status --porcelain)" ]]; then
+    echo "Repo is not clean."
+    exit 1
+fi
+
+rm -rf target
+VERSION=$(script/generate-version)
+TAG_VERSION="v${VERSION}"
+JAR=target/cljdoc-exerciser-${VERSION}.jar
+rm -rf "${JAR}"
+
+echo "Updating pom.xml"
+clojure -A:update-pom "${VERSION}"
+
+echo "Building jar"
+clojure -A:jar "${JAR}"
+
+echo "Tagging repo with: ${TAG_VERSION}"
+if [ "$(git tag -l "${TAG_VERSION}")" ]; then
+    echo "Git repo already tagged, probably from previous failed run."
+else
+    echo "Tagging git repo"
+    git tag "${TAG_VERSION}"
+fi
+git push --tags
+
+echo "Deploying to clojars"
+clojure -A:deploy-to-clojars "${JAR}"
+
+echo "Update pom.xml in git repo"
+git add pom.xml
+git commit -m "Update pom.xml for release"
+git push
+
+echo "Trigger build on cljdoc"
+curl -X POST -d project="lread/cljdoc-exerciser" -d version="${VERSION}" https://cljdoc.org/api/request-build2

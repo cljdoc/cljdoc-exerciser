@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -eou pipefail
+
+VERSION=$(script/generate-version)
+JAR=target/cljdoc-exerciser-${VERSION}.jar
+rm -rf "${JAR}"
+clojure -A:jar "${JAR}"
+clojure -A:install-local "${JAR}"
