@@ -88,3 +88,13 @@
   ##### Heading 5
   this is too much, I am heading home."
   [a b c])
+
+#?(:cljs
+   (defn exercise5
+     "This function is for ClojureScript only."
+     [j s]) )
+
+#?(:clj
+   (defn exercise6
+     "This function is for Clojure only."
+     [j v m]))
