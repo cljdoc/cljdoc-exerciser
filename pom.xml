@@ -27,7 +27,7 @@
       <connection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</connection>
       <developerConnection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</developerConnection>
       <tag>09a4351a325c48fe45b1b78e8c805adfd732dd83</tag>
-      <url>git@github.com:lread/cljdoc-exerciser</url>
+      <url>git@github.com:cljdoc/cljdoc-exerciser</url>
   </scm>
   <repositories>
     <repository>
