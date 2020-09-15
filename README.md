@@ -13,4 +13,4 @@ It should be extended as the cljdoc community sees fit.
 | [script/install](script/install)           | install to local maven repository, for testing         |
 | [script/release](sript/release)            | build and deploy to clojars                            |
 
-Version scheme is defined in [script\generate_version](script/generate_version)
+Version scheme is defined in [script\generate-version](script/generate_version)
