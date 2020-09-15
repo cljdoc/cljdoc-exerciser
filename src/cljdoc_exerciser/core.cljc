@@ -51,15 +51,14 @@
 
   An external link to [the CommonMark website](https://commonmark.org/).
 
-  If referencing a cljdoc article, use relative syntax so that the link will work locally during local testing.
-  For example: [the cljdoc-exerciser CommonMark features article](/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features).
-
-  There is an awkwardness here. If viewing from GitHub, I'd probably want to see the article from the GitHub repo rather
-  than the cljdoc rendered version.
+  For referencing local articles that cljdoc has imported, we have 2 choices:
+  - Reference via [cljdoc root relative slug](/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features).
+  - Via [cljdoc fully qualified slug](https://cljdoc.org/d/lread/cljdoc-exerciser/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features)
+  - Via [GitHub relative file](doc/tests/md-features.md). This has the advantage of allowing to the user to stay on GitHub if they are starting from GitHub.
 
   **Wikilinks**
 
-  Wikilinks are a cljdoc extension and allow you to link to api functions.
+  Wikilinks are a cljdoc extension to CommonMark and allow you to link to API functions.
   They only work in docstrings.
 
   Let's link to the [[exercise1]] function in this namespace."
