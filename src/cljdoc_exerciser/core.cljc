@@ -51,10 +51,12 @@
 
   An external link to [the CommonMark website](https://commonmark.org/).
 
-  For referencing local articles that cljdoc has imported, we have 2 choices:
+  For referencing local articles that cljdoc has imported, we have 3 choices:
+  - Via [GitHub relative file](doc/tests/md-features.md).
+    - it offers a link that will keep GitHub users on GitHub, maybe good, maybe not? Depends on your perspective.
+    - does not specify project coords, making it GitHub fork friendly
   - Reference via [cljdoc root relative slug](/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features).
-  - Via [cljdoc fully qualified slug](https://cljdoc.org/d/lread/cljdoc-exerciser/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features)
-  - Via [GitHub relative file](doc/tests/md-features.md). This has the advantage of allowing to the user to stay on GitHub if they are starting from GitHub.
+  - Via [cljdoc fully qualified slug](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features)
 
   **Wikilinks**
 
