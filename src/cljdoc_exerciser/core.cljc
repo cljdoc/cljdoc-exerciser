@@ -1,5 +1,10 @@
 (ns cljdoc-exerciser.core
-  "Here we look at cljdoc features for APIs")
+  "Here we look at cljdoc features for APIs
+
+  Namespace docstrings **can** contain markdown.
+
+  And should support links repo [to articles](/doc/tests/md-features.md)
+  and inline repo images ![test image 1](/images/test-image-1.png)")
 
 (defn exercise1
   "Will someone ever link to me?"
@@ -72,7 +77,7 @@
 
   Will one of my local images show up? I certainly hope so.
 
-  ![my local test image should appear here](images/test-image-1.png \"my local test image text\")
+  ![my local test image should appear here](/images/test-image-1.png \"my local test image text\")
 
   An external image should work fine too:
 
