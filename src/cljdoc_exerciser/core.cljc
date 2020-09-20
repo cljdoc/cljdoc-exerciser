@@ -56,17 +56,17 @@
 
   An external link to [the CommonMark website](https://commonmark.org/).
 
-  For referencing local articles that cljdoc has imported, we have 3 choices:
-  - Via [GitHub relative file](doc/tests/md-features.md).
-    - it offers a link that will keep GitHub users on GitHub, maybe good, maybe not? Depends on your perspective.
-    - does not specify project coords, making it GitHub fork friendly
-  - Reference via [cljdoc root relative slug](/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features).
-  - Via [cljdoc fully qualified slug](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/doc/document-tests/commonmark-features)
+  A docstring can reference articles that cljdoc has imported.
+  You'll want to use a [GitHub root relative link](/doc/tests/md-features.md) for this.
+  A root relative link has the following benefits:
+  - it will also work when users decide to download your cljdocs into an offline bundle
+  - does not specify project coords, making it GitHub fork friendly
 
   **Wikilinks**
 
   Wikilinks are a cljdoc extension to CommonMark and allow you to link to API functions.
-  They only work in docstrings.
+  They only work in docstrings, here's the markdown to link to another function is the current
+  namespace:
 
   Let's link to the [[exercise1]] function in this namespace."
   []
