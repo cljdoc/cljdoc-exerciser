@@ -432,3 +432,9 @@ Do we support svgbob? Not yet but if we someday decide to, this sample from the 
     `─'      `─'    ( 5 ) ( 6 ) ( 7 )
                      `─'   `─'   `─'
 ....
+
+== Embedded html
+
+Although it is discouraged, AsciiDoctor does support passthroughs.
+
+AsciiDoctor renders pass:[<b>passed through</b>] embedded html.

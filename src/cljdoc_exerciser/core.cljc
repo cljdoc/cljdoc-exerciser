@@ -104,3 +104,9 @@
    (defn exercise6
      "This function is for Clojure only."
      [j v m]))
+
+(defn exercise7
+  "How does a docstring handle embedded html?
+
+  Is is <b>bold</b> enough to render it?"
+  [])

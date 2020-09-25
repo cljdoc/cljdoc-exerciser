@@ -168,3 +168,8 @@ There is no support for in CommonMark for coloring or custom styling of text.
 ## Drawings
 
 There is no support in CommonMark for drawings.
+
+## Embedded html
+
+GitHub markdown renders <b>some</b> embedded html.
+
