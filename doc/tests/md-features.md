@@ -104,13 +104,19 @@ Here's a remote image:
 
 Local link: [cljdoc asciidoc features](adoc-features.adoc)
 
+Local link root relative: [cljdoc markdown features](/doc/tests/md-features.md)
+
+SCM link: [scm link](excluded.md)
+
+SCM link root relative: [scm link](/doc/tests/excluded.md)
+
 External link: [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 
 Link to anchor: [Anchored heading](#anchorid)
 
-Note: WikiLinks to api functions do not work here, they only work in doc strings.
+Note: WikiLinks to api functions do not work here, they only work in docstrings.
 
-Let's try referencing our APIs:
+Let's try referencing our APIs via fully qualified links:
 
 1. [A link to cljdoc-exerciser.core/excercise3](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3)
 2. [A link to cljdoc-exerciser.core](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core)

@@ -141,17 +141,22 @@ image:test-image-1.png[A local test image should appear here]
 
 Local link: link:md-features.md[cljdoc markdown features]
 
+Local link root relative: link:/doc/tests/md-features.md[cljdoc markdown features]
+
+SCM link: link:excluded.md[scm link]
+
+SCM link root relative: link:/doc/tests/excluded.md[scm link]
+
 External link: https://asciidoctor.org/docs/asciidoc-vs-markdown[AsciiDoc vs Markdown]
 
 Link to anchor: <<anchorid>>
 
+Wikilinks are only for CommonMark in docstrings.
 
-As far as I can figure, Asciidoctor does not support root relative http links - so we need to fully qualify links to our APIs:
+Let's try referencing our APIs via fully qualified links:
 
 1. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3[A link to cljdoc-exerciser.core/excercise3]
 2. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core[A link to cljdoc-exerciser.core]
-
-If they are not already, these will soon be converted to root relative links by cljdoc to support local testing.
 
 == Headings
 === Level 3

@@ -56,11 +56,17 @@
 
   An external link to [the CommonMark website](https://commonmark.org/).
 
-  A docstring can reference articles that cljdoc has imported.
-  You'll want to use a [GitHub root relative link](/doc/tests/md-features.md) for this.
+  A docstring can reference resources on GitHub.
+  You'll need to use a GitHub root relative link for this.
+  Root relative links start with `/`.
   A root relative link has the following benefits:
   - it will also work when users decide to download your cljdocs into an offline bundle
   - does not specify project coords, making it GitHub fork friendly
+
+  Examples:
+  - [an imported article will be shown on cljdoc](/doc/tests/md-features.md)
+  - [another resource will be link you to GitHub](/doc/tests/excluded.md)
+  - [specifying a relative link results in error link](doc/tests/excluded.md)
 
   **Wikilinks**
 
