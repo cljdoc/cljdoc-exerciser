@@ -2,7 +2,6 @@
 :toc:
 :toclevels: 6
 :figure-caption!:
-:imagesdir: ../../images
 
 == Introduction
 A test AsciiDoctor doc to exercise cljdoc formatting and features.
@@ -117,16 +116,13 @@ Another paragraph in quote.
 ____
 
 == Images
-This local image should work on github and cljdoc.  According to asciidoctor, images are resolved relative to the document or at the path specified by the `imagesdir` asciidoctor attribute.
+This local image should work on github and cljdoc.
 
-Current value of `imagesdir`:
+image:/images/test-image-1.png[A local test image should appear here]
 
-[subs=attributes+]
-----
-{imagesdir}
-----
+The same image can be referenced relative to this document:
 
-image:test-image-1.png[A local test image should appear here]
+image:../../images/test-image-1.png[A local test image should appear here]
 
 Here's a remote image:
 
