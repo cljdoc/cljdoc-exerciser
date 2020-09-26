@@ -4,7 +4,9 @@
   Namespace docstrings **can** contain markdown.
 
   And should support links repo [to articles](/doc/tests/md-features.md)
-  and inline repo images ![test image 1](/images/test-image-1.png)")
+  and inline repo images
+
+  ![test image 1](/images/test-image-1.png)")
 
 (defn exercise1
   "Will someone ever link to me?"
@@ -65,7 +67,7 @@
 
   Examples:
   - [an imported article will be shown on cljdoc](/doc/tests/md-features.md)
-  - [another resource will be link you to GitHub](/doc/tests/excluded.md)
+  - [another resource will link you to GitHub](/doc/tests/excluded.md)
   - [specifying a relative link results in error link](doc/tests/excluded.md)
 
   **Wikilinks**
@@ -79,11 +81,13 @@
   (+ 1 2 3))
 
 (defn exercise3
-  "Linking to images might be of interest, I suppose.
+  "Linking to images might be of interest.
 
-  Will one of my local images show up? I certainly hope so.
-
+  Specify your images as root relative (starting with a `/`):
   ![my local test image should appear here](/images/test-image-1.png \"my local test image text\")
+
+  Otherwise they will result in errored references:
+  ![alt image text](../../images/test-image-1.png)
 
   An external image should work fine too:
 
