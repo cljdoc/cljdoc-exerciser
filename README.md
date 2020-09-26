@@ -14,4 +14,4 @@ It should be extended as the cljdoc community sees fit.
 | [script/prep-for-release](script/update-pom) | update pom to reflect current version and scm revision |
 | [script/release](script/release)             | build and deploy to clojars                            |
 
-Version scheme is defined in [script/generate-version](script/generate_version)
+Version scheme is defined in [script/generate-version](script/generate-version)
