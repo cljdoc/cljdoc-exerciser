@@ -23,7 +23,7 @@ TAG_VERSION="v${VERSION}"
 JAR=target/cljdoc-exerciser-${VERSION}.jar
 rm -rf "${JAR}"
 
-script/prep-for-release
+script/update-pom
 
 echo "Building jar"
 clojure -A:jar "${JAR}"
