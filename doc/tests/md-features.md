@@ -94,15 +94,15 @@ With code:
 ## Images
 This local image should work on github and cljdoc.
 
-![A local test image should appear here](/images/test-image-1.png)
+![«A local test image should appear here»](/images/test-image-1.png)
 
 The same image can be referenced relative to this document:
 
-![A local test image should appear here](../../images/test-image-1.png)
+![«A local test image should appear here»](../../images/test-image-1.png)
 
 Here's a remote image:
 
-![A remote test image should appear here](https://picsum.photos/id/1041/400/100)
+![«A remote test image should appear here»](https://picsum.photos/id/1041/400/100)
 
 ## Links
 
