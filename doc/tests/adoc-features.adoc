@@ -118,20 +118,20 @@ ____
 == Images
 This local image should work on github and cljdoc.
 
-image:/images/test-image-1.png[A local test image should appear here]
+image:/images/test-image-1.png[«A local test image should appear here»]
 
 The same image can be referenced relative to this document:
 
-image:../../images/test-image-1.png[A local test image should appear here]
+image:../../images/test-image-1.png[«A local test image should appear here»]
 
 Here's a remote image:
 
-image:https://picsum.photos/id/1041/400/100[A remote test image should appear here]
+image:https://picsum.photos/id/1041/400/100[«A remote test image should appear here»]
 
 How about captions, do we display those nicely?
 
 .Test image caption
-image:test-image-1.png[A local test image should appear here]
+image:test-image-1.png[«A local test image should appear here»]
 
 == Links
 

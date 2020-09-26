@@ -6,7 +6,7 @@
   And should support links repo [to articles](/doc/tests/md-features.md)
   and inline repo images
 
-  ![test image 1](/images/test-image-1.png)")
+  ![«test image 1 should appear»](/images/test-image-1.png)")
 
 (defn exercise1
   "Will someone ever link to me?"
@@ -84,14 +84,16 @@
   "Linking to images might be of interest.
 
   Specify your images as root relative (starting with a `/`):
-  ![my local test image should appear here](/images/test-image-1.png \"my local test image text\")
+
+  ![«my local test image should appear here»](/images/test-image-1.png \"my local test image text\")
 
   Otherwise they will result in errored references:
-  ![alt image text](../../images/test-image-1.png)
+
+  ![«alt image text»](../../images/test-image-1.png)
 
   An external image should work fine too:
 
-  ![an external image should appear here](https://dummyimage.com/300x100/000000/fff&text=an+external+image)"
+  ![«an external image should appear here»](https://dummyimage.com/300x100/000000/fff&text=an+external+image)"
   [x y z])
 
 (defn exercise4
