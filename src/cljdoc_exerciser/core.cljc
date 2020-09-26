@@ -14,7 +14,7 @@
   (* d e f))
 
 (defn exercise2
-  "**A docstring can contain CommonMark formatted text.**
+  "**A function docstring can contain CommonMark formatted text.**
 
   **Lists**
 
