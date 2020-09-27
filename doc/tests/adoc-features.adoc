@@ -131,7 +131,7 @@ image:https://picsum.photos/id/1041/400/100[«A remote test image should appear 
 How about captions, do we display those nicely?
 
 .Test image caption
-image:test-image-1.png[«A local test image should appear here»]
+image:/images/test-image-1.png[«A local test image should appear here»]
 
 == Links
 
