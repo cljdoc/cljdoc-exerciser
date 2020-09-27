@@ -120,5 +120,5 @@
 (defn exercise7
   "How does a docstring handle embedded html?
 
-  Is is <b>bold</b> enough to render it?"
+  It is not <b>bold</b> enough to render it."
   [])

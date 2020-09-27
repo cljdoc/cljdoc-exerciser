@@ -8,10 +8,10 @@ It should be extended as the cljdoc community sees fit.
 
 ## Building & Releasing
 
-| Run                                          | To                                                     |
-| :-------------------                         | :----------------------------------------------------- |
-| [script/install](script/install)             | install to local maven repository, for testing         |
-| [script/prep-for-release](script/update-pom) | update pom to reflect current version and scm revision |
-| [script/release](script/release)             | build and deploy to clojars                            |
+| Run                                    | To                                                     |
+| :-------------------                   | :----------------------------------------------------- |
+| [script/install](script/install)       | install to local maven repository, for testing         |
+| [script/update-pom](script/update-pom) | update pom to reflect current version and scm revision |
+| [script/release](script/release)       | build and deploy to clojars                            |
 
 Version scheme is defined in [script/generate-version](script/generate-version)
