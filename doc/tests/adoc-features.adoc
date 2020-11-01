@@ -348,6 +348,9 @@ Asciidoctor does not support codes like GitHub flavored markdown does, but it do
 
 icon:heart[] icon:heart[size=2x]
 
+Note that GitHub does support their own emojis in adoc files as a post-processing feature:
+
+bear :bear: smirk :smirk: grin :grin:
 
 [#anchorid]
 == Anchored heading
