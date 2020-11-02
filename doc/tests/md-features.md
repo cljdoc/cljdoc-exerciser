@@ -183,3 +183,29 @@ There is no support in CommonMark for drawings.
 
 GitHub markdown renders <b>some</b> embedded html.
 
+What can't you do in embedded HTML?
+
+Is there any limits to what HTML you can use? It does not seem like it.
+Seems to me like you can reference existing CSS classes and also specify inline styles.
+I can't imagine that GitHub allows such freedom though.
+
+<table>
+  <tr>
+    <td class="red">1</td>
+    <td class="green">2</td>
+    <td style="background-color: orange">3</td>
+  </tr>
+</table>
+
+I expect JavaScript not to function:
+
+<p><span id="replaceMe">Original content, JavaScript inactive.</span> </p>
+<script>
+document.getElementById('replaceMe').innerHTML = 'New content, JavaScript active.'
+</script>
+
+Here we tell JavaScript to popup an alert:
+
+<script>
+alert("Uh oh");
+</script>

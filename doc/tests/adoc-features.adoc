@@ -496,10 +496,10 @@ Although it is discouraged, AsciiDoctor does support passthroughs.
 
 AsciiDoctor renders pass:[<b>passed through</b>] embedded html.
 
-What can't you do in pass?
+What can't you do in embedded HTML?
 
-Is there any limits to what html you can use? It does not seem like it.
-Seems to me like you can reference existing css classes and also specify inline styles.
+Is there any limits to what HTML you can use? It does not seem like it.
+Seems to me like you can reference existing CSS classes and also specify inline styles.
 I can't imagine that GitHub allows such freedom though.
 ++++
 <table>
@@ -518,6 +518,8 @@ In SECURE safe mode, I expect JavaScript not to function:
 document.getElementById('replaceMe').innerHTML = 'New content, JavaScript active.'
 </script>
 ++++
+
+Here we tell JavaScript to popup and alert:
 
 ++++
 <script>
