@@ -2,6 +2,7 @@
 :toc:
 :toclevels: 6
 :figure-caption!:
+:stem:
 
 == Introduction
 A test AsciiDoctor doc to exercise cljdoc formatting and features.
@@ -409,6 +410,15 @@ Roles can be combined, some examples:
 [red yellow-background]#red on yellow background#
 [big blue line-through fuchsia-background]#big blue line-through maroon-background#
 
+== Math
+
+AsciiDoc stem supports mathematical equations via MathJax. +
+To enable stem support for your doc add in the `:stem:` document attribute.
+
+[stem]
+++++
+sqrt(4) = 2
+++++
 
 == Drawings
 
