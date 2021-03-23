@@ -412,13 +412,44 @@ Roles can be combined, some examples:
 
 == Math
 
-AsciiDoc stem supports mathematical equations via MathJax. +
-To enable stem support for your doc add in the `:stem:` document attribute.
+AsciiDoc STEM supports mathematical equations via MathJax.
 
+To enable stem support for your doc add in the `:stem:` document attribute.
+This is where you can provide your default syntax for example:
+
+----
+:stem: latexmath
+----
+
+Specifying nothing sets the default for `stem` blocks to `asciimath`.
+But, you can always be specific.
+Instead of specifying `stem` for your formulas, you can explicitly specify `asciimath` or `latexmath` instead.
+To each is own, but I think I'd be specific.
+
+Here is a Latex example:
+[latexmath]
+++++
+\[ f(n) =
+  \begin{cases}
+    n/2       & \quad \text{if } n \text{ is even}\\
+    -(n+1)/2  & \quad \text{if } n \text{ is odd}
+  \end{cases}
+\]
+++++
+
+And one for AsciiMath:
+[asciimath]
+++++
+sum_(i=1)^n i^3=((n(n+1))/2)^2
+++++
+
+And AsciiMath again using `stem` instead of being specific:
 [stem]
 ++++
-sqrt(4) = 2
+sum_(i=1)^n i^3=((n(n+1))/2)^2
 ++++
+
+Here's an example latexmath:[\forall x \in X, \quad \exists y \leq \epsilon] of an inlined expression.
 
 == Drawings
 
