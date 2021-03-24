@@ -2,6 +2,7 @@
 :toc:
 :toclevels: 6
 :figure-caption!:
+:stem:
 
 == Introduction
 A test AsciiDoctor doc to exercise cljdoc formatting and features.
@@ -409,6 +410,46 @@ Roles can be combined, some examples:
 [red yellow-background]#red on yellow background#
 [big blue line-through fuchsia-background]#big blue line-through maroon-background#
 
+== Math
+
+AsciiDoc STEM supports mathematical equations via MathJax.
+
+To enable stem support for your doc add in the `:stem:` document attribute.
+This is where you can provide your default syntax for example:
+
+----
+:stem: latexmath
+----
+
+Specifying nothing sets the default for `stem` blocks to `asciimath`.
+But, you can always be specific.
+Instead of specifying `stem` for your formulas, you can explicitly specify `asciimath` or `latexmath` instead.
+To each is own, but I think I'd be specific.
+
+Here is a Latex example:
+[latexmath]
+++++
+\[ f(n) =
+  \begin{cases}
+    n/2       & \quad \text{if } n \text{ is even}\\
+    -(n+1)/2  & \quad \text{if } n \text{ is odd}
+  \end{cases}
+\]
+++++
+
+And one for AsciiMath:
+[asciimath]
+++++
+sum_(i=1)^n i^3=((n(n+1))/2)^2
+++++
+
+And AsciiMath again using `stem` instead of being specific:
+[stem]
+++++
+sum_(i=1)^n i^3=((n(n+1))/2)^2
+++++
+
+Here's an example latexmath:[\forall x \in X, \quad \exists y \leq \epsilon] of an inlined expression.
 
 == Drawings
 
