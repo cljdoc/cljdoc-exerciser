@@ -500,7 +500,7 @@ What can't you do in embedded HTML?
 
 Is there any limits to what HTML you can use? It does not seem like it.
 Seems to me like you can reference existing CSS classes and also specify inline styles.
-I can't imagine that GitHub allows such freedom though.
+I can't imagine that GitHub allows such freedom though, and neither does cljdoc.
 ++++
 <table>
   <tr>
@@ -511,7 +511,8 @@ I can't imagine that GitHub allows such freedom though.
 </table>
 ++++
 
-In SECURE safe mode, I expect JavaScript not to function:
+Like GitHub, cljdoc sanitizes HTML, removing any JavaScript.
+For example:
 ++++
 <p><span id="replaceMe">Original content, JavaScript inactive.</span> </p>
 <script>
@@ -519,8 +520,7 @@ document.getElementById('replaceMe').innerHTML = 'New content, JavaScript active
 </script>
 ++++
 
-Here we tell JavaScript to popup and alert:
-
+Here we tell JavaScript to popup and alert, something that cljdoc will not allow:
 ++++
 <script>
 alert("Uh oh");
@@ -628,7 +628,7 @@ What am I?
 
 === Video
 
-Asciidoctor explicitly supports videos with a variety of options.
+Asciidoctor explicitly supports videos with a variety of options, something that cljdoc does not currently support.
 
 Here's a youtube video with default options:
 
@@ -647,13 +647,13 @@ video::https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p
 
 === Audio
 
-Asciidoctor also allows audio play.
+Asciidoctor also allows audio play, cljdoc does not currently support this.
 
 audio::https://upload.wikimedia.org/wikipedia/commons/3/3c/01_-_Vivaldi_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg[]
 
 === Stem
 
-Stem supports mathematical equations via MathJax, which is neat, but we don't support it at this time.
+Stem supports mathematical equations via MathJax, which is neat, and cljdoc supports it.
 
 [stem]
 ++++

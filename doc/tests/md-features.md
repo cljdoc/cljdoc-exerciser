@@ -187,7 +187,7 @@ What can't you do in embedded HTML?
 
 Is there any limits to what HTML you can use? It does not seem like it.
 Seems to me like you can reference existing CSS classes and also specify inline styles.
-I can't imagine that GitHub allows such freedom though.
+I can't imagine that GitHub allows such freedom though and neither does cljdoc.
 
 <table>
   <tr>
@@ -197,14 +197,14 @@ I can't imagine that GitHub allows such freedom though.
   </tr>
 </table>
 
-I expect JavaScript not to function:
+Cljdoc yanks JavaScript, for example:
 
 <p><span id="replaceMe">Original content, JavaScript inactive.</span> </p>
 <script>
 document.getElementById('replaceMe').innerHTML = 'New content, JavaScript active.'
 </script>
 
-Here we tell JavaScript to popup an alert:
+Here we tell JavaScript to popup an alert, cljdoc does not allow this:
 
 <script>
 alert("Uh oh");
