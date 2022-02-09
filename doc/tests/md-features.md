@@ -158,6 +158,26 @@ Basic alignment support is also available:
 | I                 | this         | thing            |
 | right?            | centered?    | left?            |
 
+Cljdoc tries to match GitHub in syntaxes supported for tables. 
+For example, cljdoc does not support tables without headers:
+
+|---|---|
+| col1 | col2|
+
+Nor tables with multi-line headers:
+
+| col11 | col12|
+| col21 | col22|
+|---|---|
+| data1 | data2|
+
+Nor tables with captions:
+
+| col1 | col2|
+|---|---|
+| data1 | data2|
+[Caption]
+
 ## Emojis
 
 GitHub flavored markdown supports emojis.
@@ -183,3 +203,29 @@ There is no support in CommonMark for drawings.
 
 GitHub markdown renders <b>some</b> embedded html.
 
+What can't you do in embedded HTML?
+
+Is there any limits to what HTML you can use? It does not seem like it.
+Seems to me like you can reference existing CSS classes and also specify inline styles.
+I can't imagine that GitHub allows such freedom though and neither does cljdoc.
+
+<table>
+  <tr>
+    <td class="red">1</td>
+    <td class="green">2</td>
+    <td style="background-color: orange">3</td>
+  </tr>
+</table>
+
+Cljdoc yanks JavaScript, for example:
+
+<p><span id="replaceMe">Original content, JavaScript inactive.</span> </p>
+<script>
+document.getElementById('replaceMe').innerHTML = 'New content, JavaScript active.'
+</script>
+
+Here we tell JavaScript to popup an alert, cljdoc does not allow this:
+
+<script>
+alert("Uh oh");
+</script>

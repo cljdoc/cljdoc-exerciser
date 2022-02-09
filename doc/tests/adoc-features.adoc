@@ -1,8 +1,12 @@
 = cljdoc AsciiDoctor features
-:toc:
+:toc: macro
 :toclevels: 6
 :figure-caption!:
 :stem:
+
+In an Asciidoctor article, a preamble comes before the first section.
+
+toc::[]
 
 == Introduction
 A test AsciiDoctor doc to exercise cljdoc formatting and features.
@@ -24,6 +28,9 @@ Does this [.line-through]#strike# you as a [.line-through]##cross##word?
 My `code` was en``coded``ed.
 
 I am ^super^ excited about this ~sub~routine.
+
+A line break +
+can be useful.
 
 == Code blocks
 Here we have some clojure code :
@@ -108,6 +115,28 @@ I am a code block
 .. three
 
 
+Description list:
+
+Clojure:: Clojure for the JVM
+ClojureScript:: Clojure for JavaScript compiled by the JVM
+Plank:: Clojure for JavaScript compiled by JavaScript
+Babashka::bb:: Clojure for the command line
+
+Description list (horizontal):
+
+[horizontal]
+Clojure:: Clojure for the JVM
+ClojureScript:: Clojure for JavaScript compiled by the JVM
+Plank:: Clojure for JavaScript compiled by JavaScript
+Babashka::bb:: Clojure for the command line
+
+Description list (Q&A):
+
+[qanda]
+Why?::Human?::
+  Because
+How?:: Dunno
+
 == Quoted text
 
 ____
@@ -116,23 +145,47 @@ Quoted text.
 Another paragraph in quote.
 ____
 
+In Asciidoctor, quotes can also include the author and citation:
+
+[quote,Yogi Berra,life]
+____
+I never said most of the things I said.
+____
+
+> CommonMark syntax
+>
+> Another paragraph in quote.
+>
+> > nested quote
+>
+> back to non-nested
+
+
+And yet another syntax:
+
+"I hold it that a little rebellion now and then is a good thing,
+and as necessary in the political world as storms in the physical."
+-- Thomas Jefferson, Papers of Thomas Jefferson: Volume 11
+
 == Images
 This local image should work on github and cljdoc.
 
-image:/images/test-image-1.png[«A local test image should appear here»]
+image::/images/test-image-1.png[«A local test image should appear here»]
 
 The same image can be referenced relative to this document:
 
-image:../../images/test-image-1.png[«A local test image should appear here»]
+image::../../images/test-image-1.png[«A local test image should appear here»]
 
 Here's a remote image:
 
-image:https://picsum.photos/id/1041/400/100[«A remote test image should appear here»]
+image::https://picsum.photos/id/1041/400/100[«A remote test image should appear here»]
 
 How about captions, do we display those nicely?
 
 .Test image caption
-image:/images/test-image-1.png[«A local test image should appear here»]
+image::/images/test-image-1.png[«A local test image should appear here»]
+
+And here's an inline image:https://picsum.photos/id/787/100/100[«A remote test image should appear here»] image.
 
 == Links
 
@@ -275,7 +328,7 @@ Here's a table with custom sizing:
 |p
 |====
 
-An autowidth table will only be as wide as it needs to be.footnote:[file,grabbed from asciidoctor user manual]
+An autowidth table will only be as wide as it needs to be.footnote:[file, grabbed from asciidoctor user manual]
 
 [%autowidth]
 |===
@@ -296,6 +349,9 @@ Asciidoctor does not support codes like GitHub flavored markdown does, but it do
 
 icon:heart[] icon:heart[size=2x]
 
+Note that GitHub does support their own emojis in adoc files as a post-processing feature:
+
+bear :bear: smirk :smirk: grin :grin:
 
 [#anchorid]
 == Anchored heading
@@ -480,3 +536,183 @@ Do we support svgbob? Not yet but if we someday decide to, this sample from the 
 Although it is discouraged, AsciiDoctor does support passthroughs.
 
 AsciiDoctor renders pass:[<b>passed through</b>] embedded html.
+
+What can't you do in embedded HTML?
+
+Is there any limits to what HTML you can use? It does not seem like it.
+Seems to me like you can reference existing CSS classes and also specify inline styles.
+I can't imagine that GitHub allows such freedom though, and neither does cljdoc.
+++++
+<table>
+  <tr>
+    <td class="red">1</td>
+    <td class="green">2</td>
+    <td style="background-color: orange">3</td>
+  </tr>
+</table>
+++++
+
+Like GitHub, cljdoc sanitizes HTML, removing any JavaScript.
+For example:
+++++
+<p><span id="replaceMe">Original content, JavaScript inactive.</span> </p>
+<script>
+document.getElementById('replaceMe').innerHTML = 'New content, JavaScript active.'
+</script>
+++++
+
+Here we tell JavaScript to popup and alert, something that cljdoc will not allow:
+++++
+<script>
+alert("Uh oh");
+</script>
+++++
+
+== AsciiDoctor Specific Stuff
+
+=== Keyboard keys
+
+Asciidoctor supports the keyboard macro which is a handy way to show what keys to press.
+
+kbd:[q] kbd:[w] kbd:[e] kbd:[r] kbd:[t] kbd:[y]
+
+On macOS press kbd:[⌘+⌥+space] to bring up Finder search.
+
+=== Menu selections
+
+Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
+
+=== UI buttons
+
+Press the btn:[OK] button when you are finished.
+
+=== Index terms
+
+Asciidoctor supports defining index terms but does not yet support generating an index catalog via its html converter.
+So we don't either.
+
+This example ((term1-should-show)) contains some index terms (((term2-hidden, term3-hidden, term4-hidden))) just to make sure we don't barf on them.
+
+=== Example
+
+An example block can be used to illustrate some syntax or usage.
+
+.I am a sample
+====
+Do I look like a subdoc?
+
+[listing]
+....
+Some syntax here
+....
+
+Blah blah
+====
+
+An example can also be collapsible
+
+.I am a sample
+[%collapsible]
+====
+Do I look like a subdoc?
+
+[listing]
+....
+Some syntax here
+....
+
+Blah blah
+====
+
+=== Verse
+
+[verse, Lee, Testing Verse]
+____
+     I am not
+    adverse
+   to
+  testing
+ verse
+
+ or
+   am
+      I?
+____
+
+=== Side bars
+
+Side bars are for content outside the normal flow of your document.
+
+.How much chuck?
+****
+How much wood could a woodchuck chuck
+If a woodchuck could chuck wood?
+As much wood as a woodchuck could chuck,
+If a woodchuck could chuck wood.
+****
+
+=== Open blocks
+
+Not sure why adoc has these, but they can exist.
+They are blocks that masquerade as other blocks.
+I think they are here for extensibility?
+
+[abstract]
+--
+I am abstract.
+--
+
+[whatami]
+--
+What am I?
+--
+
+=== Video
+
+Asciidoctor explicitly supports videos with a variety of options, something that cljdoc does not currently support.
+
+Here's a youtube video with default options:
+
+.Simplicity Matters by Rich Hickey
+video::rI8tNMsozo0[youtube]
+
+And here's one from vimeo:
+
+.Introduction to Clojure by Stuart Halloway
+video::68375202[vimeo]
+
+And one from the archive.org:
+
+.Big Buck Bunny
+video::https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4[poster=https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217,opts="muted,loop",start=60,end=70]
+
+=== Audio
+
+Asciidoctor also allows audio play, cljdoc does not currently support this.
+
+audio::https://upload.wikimedia.org/wikipedia/commons/3/3c/01_-_Vivaldi_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg[]
+
+=== Stem
+
+Stem supports mathematical equations via MathJax, which is neat, and cljdoc supports it.
+
+[stem]
+++++
+sqrt(4) = 2
+++++
+
+=== Things we ignore
+
+Page breaks `<<<`
+
+<<<
+
+=== Discrete Heading
+
+If you want the visual affect of a heading without the semantics.
+
+[discrete]
+== This header is not part of the hierarchy and will not be part of toc
+
+[float]
+=== Ditto for this header
