@@ -158,6 +158,26 @@ Basic alignment support is also available:
 | I                 | this         | thing            |
 | right?            | centered?    | left?            |
 
+Cljdoc tries to match GitHub in syntaxes supported for tables. 
+For example, cljdoc does not support tables without headers:
+
+|---|---|
+| col1 | col2|
+
+Nor tables with multi-line headers:
+
+| col11 | col12|
+| col21 | col22|
+|---|---|
+| data1 | data2|
+
+Nor tables with captions:
+
+| col1 | col2|
+|---|---|
+| data1 | data2|
+[Caption]
+
 ## Emojis
 
 GitHub flavored markdown supports emojis.
