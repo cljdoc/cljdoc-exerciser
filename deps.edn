@@ -1,24 +1,12 @@
 {:paths ["src"]
- :deps {org.clojure/clojure {:mvn/version "1.10.1"}}
+ :deps {org.clojure/clojure {:mvn/version "1.10.3"}}
 
  :aliases
- {:jar
-  {:extra-deps {seancorfield/depstar {:mvn/version "1.1.116"}}
-   :main-opts ["-m" "hf.depstar.jar"]}
+ {:build {:deps {io.github.clojure/tools.build {:git/tag "v0.7.5" :git/sha "34727f7"}
+                 io.github.slipset/deps-deploy {:sha "d1fac08888ec8beda0579d3071bb9f804a1d446c"}}
+          :ns-default build}
 
-  :update-pom
-  {:extra-deps {com.workframe/garamond {:mvn/version "0.4.0"}}
-   :main-opts ["-m" "garamond.main" "--pom" "--force-version"]}
-
-  :install-local
-  {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.0"}
-                org.slf4j/slf4j-simple {:mvn/version "1.7.30"} }
-   :main-opts ["-m" "deps-deploy.deps-deploy" "install"]}
-
-  ;; environment variables must be set for deploy to clojars:
-  ;; - CLOJARS_USERNAME=username
-  ;; - CLOJARS_PASSWORD=clojars-token
-  :deploy-to-clojars
-  {:extra-deps {slipset/deps-deploy {:mvn/version "0.1.0"}
-                org.slf4j/slf4j-simple {:mvn/version "1.7.30"}}
-   :main-opts ["-m" "deps-deploy.deps-deploy" "deploy"]}}}
+  :outdated {:extra-deps {com.github.liquidz/antq {:mvn/version "1.5.0"}
+                          org.slf4j/slf4j-simple {:mvn/version "1.7.36"} ;; to rid ourselves of logger warnings
+                          }
+             :main-opts ["-m" "antq.core" "--ignore-locals"]}}}

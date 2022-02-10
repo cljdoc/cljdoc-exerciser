@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-set -eou pipefail
-
-JAR=target/cljdoc-exerciser.jar
-rm -rf "${JAR}"
-clojure -A:jar "${JAR}"
-clojure -A:install-local "${JAR}"

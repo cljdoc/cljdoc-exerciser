@@ -7,7 +7,7 @@ This document exists to compare basic features with AsciiDoctor. If you edit
 this doc please also edit its [AsciiDoctor counterpart](adoc-features.adoc).
 
 CommonMark is also supported in docstrings, have a look at [cljdoc-exerciser
-namespace on cljdoc.org](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core)
+namespace on cljdoc.org](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core)
 for some more examples.
 
 ## Formatting marks
@@ -122,8 +122,8 @@ Note: WikiLinks to api functions do not work here, they only work in docstrings.
 
 Let's try referencing our APIs via fully qualified links:
 
-1. [A link to cljdoc-exerciser.core/excercise3](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3)
-2. [A link to cljdoc-exerciser.core](https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core)
+1. [A link to cljdoc-exerciser.core/excercise3](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3)
+2. [A link to cljdoc-exerciser.core](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core)
 
 ## Headings
 ### Level 3

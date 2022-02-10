@@ -1,34 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>lread</groupId>
+  <groupId>org.cljdoc</groupId>
   <artifactId>cljdoc-exerciser</artifactId>
-  <version>1.0.57</version>
   <name>cljdoc-exerciser</name>
-  <dependencies>
-    <dependency>
-      <groupId>org.clojure</groupId>
-      <artifactId>clojure</artifactId>
-      <version>1.10.1</version>
-    </dependency>
-  </dependencies>
+  <url>https://github.com/cljdoc/cljdoc-exerciser</url>
+  <licenses>
+    <license>
+      <name>Eclipse Public License</name>
+      <url>http://www.eclipse.org/legal/epl-v10.html</url>
+    </license>
+  </licenses>
+  <scm>
+      <url>git@github.com:cljdoc/cljdoc-exerciser</url>
+      <connection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</connection>
+      <developerConnection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</developerConnection>
+  </scm>
   <properties>
       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <build>
-    <sourceDirectory>src</sourceDirectory>
-    <resources>
-        <resource>
-            <directory>src</directory>
-        </resource>
-    </resources>
-  </build>
-  <scm>
-      <connection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</connection>
-      <developerConnection>scm:git:git@github.com:cljdoc/cljdoc-exerciser.git</developerConnection>
-      <tag>f6071a876ab6f2062024ae93d96e303ec352fad7</tag>
-      <url>git@github.com:cljdoc/cljdoc-exerciser</url>
-  </scm>
   <repositories>
     <repository>
       <id>clojars</id>
@@ -36,10 +26,10 @@
     </repository>
   </repositories>
   <distributionManagement>
-      <repository>
-          <id>clojars</id>
-          <name>Clojars repository</name>
-          <url>https://clojars.org/repo</url>
-      </repository>
+    <repository>
+      <id>clojars</id>
+      <name>Clojars repository</name>
+      <url>https://clojars.org/repo</url>
+    </repository>
   </distributionManagement>
 </project>

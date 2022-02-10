@@ -1,0 +1,39 @@
+{:paths ["script"]
+ :deps {lread/status-line {:git/url "https://github.com/lread/status-line.git"
+                           :sha "35ed39645038e81b42cb15ed6753b8462e60a06d"}
+        dev.nubank/docopt {:mvn/version "0.6.1-fix7"}
+        version-clj/version-clj {:mvn/version "2.0.2"}}
+ :tasks {;; setup
+         :requires ([babashka.fs :as fs]
+                    [clojure.string :as string]
+                    [helper.shell :as shell]
+                    [lread.status-line :as status])
+         :enter (let [{:keys [name accepts-args?]} (current-task)]
+                  (when-not (string/starts-with? name "-")
+                    (status/line :head "TASK %s %s" name (string/join " " *command-line-args*))))
+         :leave (let [{:keys [name]} (current-task)]
+                  (when-not (string/starts-with? name "-")
+                    (status/line :detail "\nTASK %s done." name)))
+
+         ;; commands
+         clean {:doc "Delete any build work"
+                :task (when (fs/exists? "target")
+                        (fs/delete-tree "target"))}
+
+         cljdoc-preview {:doc "Preview what docs will look like on cljdoc, use --help for args"
+                         :task cljdoc-preview/-main}
+
+         jar {:doc "Create jar"
+              :task (shell/command "clojure -T:build jar")}
+
+         release {:doc "Tell CI to release to clojars"
+                  :task release/-main}
+
+         outdated {:doc "Check for outdated dependencies"
+                   :task (shell/command {:continue true} "clojure -M:outdated")}
+
+         -ci-version {:doc "Called by GitHub Action"
+                      :task (shell/command "clojure -T:build ci-version-tag")}
+
+         -ci-deploy {:doc "Called by GitHub Action"
+                     :task (shell/command "clojure -T:build ci-deploy")}}}

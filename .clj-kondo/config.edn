@@ -1,0 +1,2 @@
+{:config-paths ^:replace ["lread/status-line"]
+ :linters {:unsorted-required-namespaces {:level :warning}}}

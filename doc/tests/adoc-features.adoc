@@ -205,8 +205,8 @@ Wikilinks are only for CommonMark in docstrings.
 
 Let's try referencing our APIs via fully qualified links:
 
-1. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3[A link to cljdoc-exerciser.core/excercise3]
-2. https://cljdoc.org/d/lread/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core[A link to cljdoc-exerciser.core]
+1. https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3[A link to cljdoc-exerciser.core/excercise3]
+2. https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core[A link to cljdoc-exerciser.core]
 
 == Headings
 === Level 3

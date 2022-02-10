@@ -1,0 +1,64 @@
+name: Release
+on:
+  push:
+    tags:
+      - 'latest'
+
+jobs:
+  release:
+    environment: 'release'
+
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - name: Checkout - with tag support
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Setup git user - so that we can later tag
+      uses: fregante/setup-git-user@v1.0.1
+
+    - name: Clojure deps cache
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/.m2/repository
+          ~/.gitlibs
+        key: $${ runner.os }}-cljdeps-release-${{ hashFiles('deps.edn') }}
+        restore-keys: $${ runner.os }}-cljdeps-release-
+
+    - name: Setup Java
+      uses: actions/setup-java@v2
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+
+    - name: Install Babashka
+      run: curl -s https://raw.githubusercontent.com/borkdude/babashka/master/install | sudo bash
+
+    - name: Install Clojure
+      run: curl -s https://download.clojure.org/install/linux-install-1.10.3.1075.sh | sudo bash
+
+    - name: Tools Versions
+      run: |
+        echo "bb --version"
+        bb --version
+        echo "node --version"
+        node --version
+        echo "java -version"
+        java -version
+        echo "clojure -Sdescribe"
+        clojure -Sdescribe
+
+    - name: Jar
+      run: bb jar
+
+    - name: Add Version Tag
+      run: bb -ci-version
+
+    - name: Deploy
+      env:
+        CLOJARS_USERNAME: ${{ secrets.CLOJARS_USERNAME }}
+        CLOJARS_PASSWORD: ${{ secrets.CLOJARS_PASSWORD }}
+      run: bb -ci-deploy
