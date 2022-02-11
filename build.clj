@@ -1,5 +1,6 @@
 (ns build
-  (:require [clojure.edn :as edn]
+  (:require [build-shared :as shared]
+            [clojure.edn :as edn]
             [clojure.java.io :as io]
             [clojure.tools.build.api :as b]
             [deps-deploy.deps-deploy :as dd]))
@@ -69,23 +70,11 @@
 ;; GitHub Actions deploy support, called from action only
 ;;
 
-;; a request to release is done by tagging with "latest"
-(defn ci-release? []
-  (and (= "tag" (System/getenv "GITHUB_REF_TYPE"))
-       (= "latest" (System/getenv "GITHUB_REF_NAME"))))
-
 (defn ci-deploy [_]
-  (if (ci-release?)
+  (if (shared/ci-release?)
     (do
       (println "Releasing to clojars...")
       (dd/deploy {:installer :remote
                   :artifact jar-file
                   :pom-file (b/pom-path {:lib lib :class-dir class-dir})}))
-    (println "Not on CI service, skipping deploy")))
-
-(defn ci-version-tag [_]
-  (if (ci-release?)
-    (let [tag-version (built-version*)]
-      (b/git-process {:git-args (format "git tag -a %s -m Release %s" tag-version tag-version)})
-      (b/git-process {:git-args (format "git push origin %s" tag-version)}))
-    (println "Not on CI service, skipping version tagging")))
+    (throw (ex-info "Not on CI service" {}))))

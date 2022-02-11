@@ -1,10 +1,11 @@
-{:paths ["script"]
+{:paths ["." "script"]
  :deps {lread/status-line {:git/url "https://github.com/lread/status-line.git"
                            :sha "35ed39645038e81b42cb15ed6753b8462e60a06d"}
         dev.nubank/docopt {:mvn/version "0.6.1-fix7"}
         version-clj/version-clj {:mvn/version "2.0.2"}}
  :tasks {;; setup
          :requires ([babashka.fs :as fs]
+                    [build-shared :as shared]
                     [clojure.string :as string]
                     [helper.shell :as shell]
                     [lread.status-line :as status])
@@ -32,8 +33,21 @@
          outdated {:doc "Check for outdated dependencies"
                    :task (shell/command {:continue true} "clojure -M:outdated")}
 
-         -ci-version {:doc "Called by GitHub Action"
-                      :task (shell/command "clojure -T:build ci-version-tag")}
+         ;; Tasks run on GitHub Actions
 
-         -ci-deploy {:doc "Called by GitHub Action"
+         -ci-release (and (not (shared/ci-release?))
+                          (status/die 1 "Must be run from CI service"))
+
+         -built-version (-> (shell/command {:out :string}
+                                           "clojure -T:build built-version")
+                            :out
+                            string/trim)
+
+         -ci-version {:depends [-ci-release -built-version]
+                      :task (let [tag-version (str "v" -built-version)]
+                              (println "Tagging repo with:" tag-version)
+                              (shell/command "git tag -a" tag-version "-m"  (str "Release " tag-version))
+                              (shell/command "git push origin" tag-version))}
+
+         -ci-deploy {:depends [-ci-release]
                      :task (shell/command "clojure -T:build ci-deploy")}}}
