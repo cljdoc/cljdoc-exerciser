@@ -55,11 +55,13 @@
 (defn install
   "Install built jar to local maven repo"
   [_]
-  (b/install {:class-dir class-dir
-              :lib lib
-              :version (built-version*)
-              :basis basis
-              :jar-file jar-file}))
+  (let [version (built-version*)]
+    (b/install {:class-dir class-dir
+                :lib lib
+                :version version
+                :basis basis
+                :jar-file jar-file})
+    (println "Installed version" version)))
 
 (defn project-lib
   "Returns project groupid/artifactid"
@@ -77,4 +79,4 @@
       (dd/deploy {:installer :remote
                   :artifact jar-file
                   :pom-file (b/pom-path {:lib lib :class-dir class-dir})}))
-    (throw (ex-info "Not on CI service" {}))))
+    (throw (ex-info "Must be run from CI service" {}))))
