@@ -1,6 +1,6 @@
 # cljdoc-exerciser
 
-[![cljdoc badge](https://cljdoc.org/badge/org.cljdoc/cljdoc-exerciser)](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser)
+[![cljdoc badge](https://cljdoc.org/badge/org.cljdoc/cljdoc-exerciser?)](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser)
 
 This is a test project to exercise various cljdoc features and formatting.
 
