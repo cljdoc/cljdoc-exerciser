@@ -20,9 +20,9 @@
 
 (defn current-branch []
   (-> (shell/command {:out :string}
-                     "git rev-parse --abbrev-ref HEAD"
-                     :out
-                     string/trim)))
+                     "git rev-parse --abbrev-ref HEAD")
+      :out
+      string/trim))
 
 (defn force-push-tag [tag]
   (shell/command "git tag -f" tag)
