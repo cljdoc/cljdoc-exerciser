@@ -76,7 +76,9 @@
   They only work in docstrings, here's the markdown to link to another function is the current
   namespace:
 
-  Let's link to the [[exercise1]] function in this namespace."
+  Let's link to the [[exercise1]] function in this namespace.
+
+  Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link."
   []
   (+ 1 2 3))
 

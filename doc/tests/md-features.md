@@ -118,7 +118,7 @@ External link: [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)
 
 Link to anchor: [Anchored heading](#anchorid)
 
-Note: WikiLinks to api functions do not work here, they only work in docstrings.
+Note: WikiLinks to api functions [[do not work here]], they only work in docstrings.
 
 Let's try referencing our APIs via fully qualified links:
 
