@@ -6,7 +6,14 @@
   And should support links repo [to articles](/doc/tests/md-features.md)
   and inline repo images
 
-  ![«test image 1 should appear»](/images/test-image-1.png)")
+  ![«test image 1 should appear»](/images/test-image-1.png)
+
+  Wikilinks work from namespace docstrings:
+  - a var local to this namespace [[exercise7]]
+  - a different namespace [[cljdoc-exerciser.ns2]]
+  - a var in a different namespace [[cljdoc-exerciser.ns2/whatever]]
+
+  Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link.")
 
 (defn exercise1
   "Will someone ever link to me?"
@@ -73,10 +80,11 @@
   **Wikilinks**
 
   Wikilinks are a cljdoc extension to CommonMark and allow you to link to API functions.
-  They only work in docstrings, here's the markdown to link to another function is the current
-  namespace:
+  They only work in docstrings:
 
-  Let's link to the [[exercise1]] function in this namespace.
+  - a var local to this namespace [[exercise1]]
+  - a different namespace [[cljdoc-exerciser.ns2]]
+  - a var in a different namespace [[cljdoc-exerciser.ns2/whatever]]
 
   Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link."
   []
