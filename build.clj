@@ -61,7 +61,7 @@
                 :version version
                 :basis basis
                 :jar-file jar-file})
-    (println "Installed version" version)))
+    (println "Installed version" lib version)))
 
 (defn project-lib
   "Returns project groupid/artifactid"
