@@ -13,7 +13,8 @@
   - a different namespace [[cljdoc-exerciser.ns2]]
   - a var in a different namespace [[cljdoc-exerciser.ns2/whatever]]
 
-  Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link.")
+  Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link,
+  this includes any typos like [[cljdoc-exerciser.ns2/whatevs]] [[cljdoc-exorcisor.core]]")
 
 (defn exercise1
   "Will someone ever link to me?"
@@ -86,7 +87,8 @@
   - a different namespace [[cljdoc-exerciser.ns2]]
   - a var in a different namespace [[cljdoc-exerciser.ns2/whatever]]
 
-  Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link."
+  Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link,
+  this includes any typos like [[cljdoc-exerciser.ns2/whatevs]] [[cljdoc-exorcisor.core]]"
   []
   (+ 1 2 3))
 
