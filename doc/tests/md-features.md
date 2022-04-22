@@ -204,6 +204,15 @@ There is no support in CommonMark for drawings.
 
 GitHub markdown renders <b>some</b> embedded html.
 
+Let's try a definition list:
+
+<dl>
+  <dt>Term 1</dt>
+  <dd>The definition of term one</dd>
+  <dt>Happiness</dt>
+  <dd>This is the definition of happiness</dd>
+</dl>
+
 What can't you do in embedded HTML?
 
 Is there any limits to what HTML you can use? It does not seem like it.

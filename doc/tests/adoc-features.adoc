@@ -1,4 +1,4 @@
-= cljdoc AsciiDoctor features
+= cljdoc Asciidoctor features
 :toc: macro
 :toclevels: 6
 :figure-caption!:
@@ -45,7 +45,7 @@ Here we have some clojure code :
   (println "Hello earthling " (uppercase name)))
 ----
 
-If we specify `clojure-repl` to asciidoctor as our language, we can invoke special highlighting for a repl session:
+If we specify `clojure-repl` to Asciidoctor as our language, we can invoke special highlighting for a repl session:
 
 [source,clojure-repl]
 ----
@@ -120,7 +120,7 @@ Description list:
 Clojure:: Clojure for the JVM
 ClojureScript:: Clojure for JavaScript compiled by the JVM
 Plank:: Clojure for JavaScript compiled by JavaScript
-Babashka::bb:: Clojure for the command line
+Babashka:: Clojure for the command line
 
 Description list (horizontal):
 
@@ -133,7 +133,7 @@ Babashka::bb:: Clojure for the command line
 Description list (Q&A):
 
 [qanda]
-Why?::Human?::
+Why?::
   Because
 How?:: Dunno
 
@@ -223,7 +223,7 @@ This is how a horizontal rule is rendered:
 
 == Tables
 
-Asciidoc tables are quite full featured.
+AsciiDoc tables are quite full featured.
 
 Here is the most basic example:
 
@@ -275,7 +275,7 @@ Here's the same table with a title
 | col2, row2
 |===
 
-And here's a nested table example from asciidoctor user manual:
+And here's a nested table example from Asciidoctor user manual:
 
 [cols="1,2a"]
 |===
@@ -436,6 +436,13 @@ This admonition has some `code` in it.
 
 == Text Roles
 
+In the days of yore, Asciidoctor supported various text roles.
+Today, the Asciidoctor team recommends you setup what makes sense for your docs in your CSS.
+For now, we do not support these legacy roles for cljdoc.
+
+The following subsections demonstrate that we do not support these roles.
+Well, except for [underline]#underline#.
+
 === size
 Text can be [big]#Big# or [small]#small#.
 
@@ -533,9 +540,9 @@ Do we support svgbob? Not yet but if we someday decide to, this sample from the 
 
 == Embedded html
 
-Although it is discouraged, AsciiDoctor does support passthroughs.
+Although it is discouraged, Asciidoctor does support passthroughs.
 
-AsciiDoctor renders pass:[<b>passed through</b>] embedded html.
+Asciidoctor renders pass:[<b>passed through</b>] embedded html.
 
 What can't you do in embedded HTML?
 
@@ -568,9 +575,7 @@ alert("Uh oh");
 </script>
 ++++
 
-== AsciiDoctor Specific Stuff
-
-=== Keyboard keys
+== Keyboard keys
 
 Asciidoctor supports the keyboard macro which is a handy way to show what keys to press.
 
@@ -578,22 +583,22 @@ kbd:[q] kbd:[w] kbd:[e] kbd:[r] kbd:[t] kbd:[y]
 
 On macOS press kbd:[⌘+⌥+space] to bring up Finder search.
 
-=== Menu selections
+== Menu selections
 
 Select menu:View[Zoom > Reset] to reset the zoom level to the default setting.
 
-=== UI buttons
+== UI buttons
 
 Press the btn:[OK] button when you are finished.
 
-=== Index terms
+== Index terms
 
 Asciidoctor supports defining index terms but does not yet support generating an index catalog via its html converter.
 So we don't either.
 
 This example ((term1-should-show)) contains some index terms (((term2-hidden, term3-hidden, term4-hidden))) just to make sure we don't barf on them.
 
-=== Example
+== Example Block
 
 An example block can be used to illustrate some syntax or usage.
 
@@ -624,7 +629,7 @@ Some syntax here
 Blah blah
 ====
 
-=== Verse
+== Verse
 
 [verse, Lee, Testing Verse]
 ____
@@ -639,7 +644,7 @@ ____
       I?
 ____
 
-=== Side bars
+== Side bars
 
 Side bars are for content outside the normal flow of your document.
 
@@ -651,7 +656,7 @@ As much wood as a woodchuck could chuck,
 If a woodchuck could chuck wood.
 ****
 
-=== Open blocks
+== Open blocks
 
 Not sure why adoc has these, but they can exist.
 They are blocks that masquerade as other blocks.
@@ -667,7 +672,7 @@ I am abstract.
 What am I?
 --
 
-=== Video
+== Video
 
 Asciidoctor explicitly supports videos with a variety of options, something that cljdoc does not currently support.
 
@@ -686,28 +691,19 @@ And one from the archive.org:
 .Big Buck Bunny
 video::https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4[poster=https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217,opts="muted,loop",start=60,end=70]
 
-=== Audio
+== Audio
 
 Asciidoctor also allows audio play, cljdoc does not currently support this.
 
 audio::https://upload.wikimedia.org/wikipedia/commons/3/3c/01_-_Vivaldi_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg[]
 
-=== Stem
-
-Stem supports mathematical equations via MathJax, which is neat, and cljdoc supports it.
-
-[stem]
-++++
-sqrt(4) = 2
-++++
-
-=== Things we ignore
+== Things we ignore
 
 Page breaks `<<<`
 
 <<<
 
-=== Discrete Heading
+== Discrete Heading
 
 If you want the visual affect of a heading without the semantics.
 
