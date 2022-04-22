@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout - with tag support
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3.0.2
       with:
         fetch-depth: 0
 
@@ -20,7 +20,7 @@ jobs:
       uses: fregante/setup-git-user@v1.0.1
 
     - name: Clojure deps cache
-      uses: actions/cache@v2
+      uses: actions/cache@v3.0.2
       with:
         path: |
           ~/.m2/repository
@@ -29,16 +29,16 @@ jobs:
         restore-keys: $${ runner.os }}-cljdeps-release-
 
     - name: Setup Java
-      uses: actions/setup-java@v2
+      uses: actions/setup-java@v3.1.1
       with:
         distribution: 'temurin'
         java-version: '11'
 
-    - name: Install Babashka
-      run: curl -s https://raw.githubusercontent.com/borkdude/babashka/master/install | sudo bash
-
-    - name: Install Clojure
-      run: curl -s https://download.clojure.org/install/linux-install-1.10.3.1075.sh | sudo bash
+    - name: Install Clojure tools
+      uses: DeLaGuardo/setup-clojure@5.1
+      with:
+          cli: 'latest'
+          bb: 'latest'
 
     - name: Tools Versions
       run: |
