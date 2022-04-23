@@ -213,6 +213,9 @@ Let's try a definition list:
   <dd>This is the definition of happiness</dd>
 </dl>
 
+And some keyboard inputs:
+<kbd>q</kbd> <kbd>w</kbd> <kbd>e</kbd> <kbd>r</kbd> <kbd>t</kbd> <kbd>y</kbd>
+
 What can't you do in embedded HTML?
 
 Is there any limits to what HTML you can use? It does not seem like it.
