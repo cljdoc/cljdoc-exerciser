@@ -9,17 +9,17 @@
 
 (defn docs-and-args-differ "Clojure specific docstring here, args differ too" [cljs])
 
-(defprotocol ProtoAllSame
+#_(defprotocol ProtoAllSame
   "Protocol with matching everything"
   (proto1-same1 [a b] "docstring for proto1-same1")
   (proto1-same2 [a] [a b] [a b c] "docstring for proto1-same2"))
 
-(defprotocol ProtoDocsDiffer
+#_(defprotocol ProtoDocsDiffer
   "Protocol with ClojureScript specific docstring"
   (proto2-same1 [a b] "docstring for proto2-same1")
   (proto2-same2 [a] [a b] [a b c] "docstring for proto2-same2") )
 
-(defprotocol ProtoDocsAndMembersDiffer
+#_(defprotocol ProtoDocsAndMembersDiffer
   "Protocol with ClojureScript specific docstring"
   (proto3-cljs-only [a b] "docstring for proto3-cljs-only")
   (proto3-docstrings-differ [a b] "clojurescript specific docstring for proto3-docstrings-differ")

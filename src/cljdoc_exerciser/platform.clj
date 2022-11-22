@@ -1,25 +1,25 @@
 (ns cljdoc-exerciser.platform
   "Clojure namespace - test when there are differences between platforms.")
 
-(defn same "Docstring matches for all platforms, but links to sources should be different" [a])
+(defn same "Docstring matches for all platforms, but links to sources should be different" [same])
 
-(defn docs-differ "Clojure specific docstring here" [a])
+(defn docs-differ "Clojure specific docstring here" [same])
 
-(defn args-differ "Docstrings same, but arglists differ" [a])
+(defn args-differ "Docstrings same, but arglists differ" [clj])
 
-(defn docs-and-args-differ "Clojure specific docstring here, args differ too" [a])
+(defn docs-and-args-differ "Clojure specific docstring here, args differ too" [clj])
 
-(defprotocol ProtoAllSame
+#_(defprotocol ProtoAllSame
   "Protocol with matching everything"
   (proto1-same1 [a b] "docstring for proto1-same1")
   (proto1-same2 [a] [a b] [a b c] "docstring for proto1-same2"))
 
-(defprotocol ProtoDocsDiffer
+#_(defprotocol ProtoDocsDiffer
   "Protocol with Clojure specific docstring"
   (proto2-same1 [a b] "docstring for proto2-same1")
   (proto2-same2 [a] [a b] [a b c] "docstring for proto2-same2") )
 
-(defprotocol ProtoDocsAndMembersDiffer
+#_(defprotocol ProtoDocsAndMembersDiffer
   "Protocol with Clojure specific docstring"
   (proto3-clj-only [a b] "docstring for proto3-clj-only")
   (proto3-docstrings-differ [a b] "clojure specific docstring for proto3-docstrings-differ")
