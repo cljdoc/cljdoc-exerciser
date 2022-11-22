@@ -7,7 +7,7 @@
 
 (defn args-differ "Docstrings same, but arglists differ" [cljs])
 
-(defn docs-and-args-differ "Clojure specific docstring here, args differ too" [cljs])
+(defn docs-and-args-differ "ClojureScript specific docstring here, args differ too" [cljs])
 
 #_(defprotocol ProtoAllSame
   "Protocol with matching everything"
