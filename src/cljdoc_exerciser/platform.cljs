@@ -7,6 +7,22 @@
 
 (defn args-differ "Docstrings same, but arglists differ" [cljs])
 
+(defn args-differ-bigger "Docstring same, but arglists differ
+
+  And... with more text.
+  Just to see how that will render."
+  ([a b c])
+  ([x y])
+  ([z]))
+
+(defn docs-and-args-differ-bigger "ClojureScript specific docstring here, args differ too
+
+  With additional text to see how
+  that renders."
+  ([a b c])
+  ([x y])
+  ([z]))
+
 (defn docs-and-args-differ "ClojureScript specific docstring here, args differ too" [cljs])
 
 (defn cljs-only "This fn appears only in ClojureScript" [a])
