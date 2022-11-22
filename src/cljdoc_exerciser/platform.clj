@@ -9,6 +9,8 @@
 
 (defn docs-and-args-differ "Clojure specific docstring here, args differ too" [clj])
 
+(defn clj-only "This fn appears only in Clojure" [a])
+
 #_(defprotocol ProtoAllSame
   "Protocol with matching everything"
   (proto1-same1 [a b] "docstring for proto1-same1")
