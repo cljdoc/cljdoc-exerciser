@@ -23,6 +23,12 @@
   ([a b c])
   ([x y]))
 
+(defn docs-clj-only "Here we have docs for Clojure
+
+  But none for ClojureScript" [a])
+
+(defn docs-cljs-only [a])
+
 (defn clj-only "This fn appears only in Clojure" [a])
 
 #_(defprotocol ProtoAllSame

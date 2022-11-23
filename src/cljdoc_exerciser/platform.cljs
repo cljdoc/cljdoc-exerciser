@@ -25,6 +25,13 @@
 
 (defn docs-and-args-differ "ClojureScript specific docstring here, args differ too" [cljs])
 
+(defn docs-clj-only  [a])
+
+(defn docs-cljs-only "Here we have docs for ClojureScript
+
+  But none for Clojure" [a])
+
+
 (defn cljs-only "This fn appears only in ClojureScript" [a])
 
 #_(defprotocol ProtoAllSame
