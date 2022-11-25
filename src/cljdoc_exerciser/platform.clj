@@ -31,19 +31,22 @@
 
 (defn clj-only "This fn appears only in Clojure" [a])
 
-#_(defprotocol ProtoAllSame
+(defprotocol ProtoAllSame
   "Protocol with matching everything"
   (proto1-same1 [a b] "docstring for proto1-same1")
   (proto1-same2 [a] [a b] [a b c] "docstring for proto1-same2"))
 
-#_(defprotocol ProtoDocsDiffer
+(defprotocol ProtoDocsDiffer
   "Protocol with Clojure specific docstring"
   (proto2-same1 [a b] "docstring for proto2-same1")
   (proto2-same2 [a] [a b] [a b c] "docstring for proto2-same2") )
 
-#_(defprotocol ProtoDocsAndMembersDiffer
+(defprotocol ProtoDocsAndMembersDiffer
   "Protocol with Clojure specific docstring"
   (proto3-clj-only [a b] "docstring for proto3-clj-only")
+  (proto3-docs-and-args-differ [a] [a b] "a clojure specific
+
+docstring here")
   (proto3-docstrings-differ [a b] "clojure specific docstring for proto3-docstrings-differ")
   (proto3-args-differ [a b] "dosctrings same, arglists differ for proto3-args-differ")
   (proto3-same [a] [a b] [a b c] "docstring for proto3-same"))
