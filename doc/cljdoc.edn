@@ -3,4 +3,4 @@
                     ["AsciiDoctor features" {:file "doc/tests/adoc-features.adoc"}]
                     ["CommonMark fea``tures" {:file "doc/tests/md-features.md"}]
                     ["AsciiDoctor User Manual" {:file "doc/tests/asciidoctor-user-manual.adoc"}]]]
- :cljdoc/docstring-format :markdown}
+ :cljdoc/docstring-format "invalid"}
