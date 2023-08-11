@@ -1,6 +1,6 @@
 {:cljdoc.doc/tree [["Readme" {:file "README.md"}]
                    ["Document tests" {:file "doc/overview.adoc"}
                     ["AsciiDoctor features" {:file "doc/tests/adoc-features.adoc"}]
-                    ["CommonMark fea``tures" {:file "doc/tests/md-features.md"}]
+                    ["CommonMark features" {:file "doc/tests/md-features.md"}]
                     ["AsciiDoctor User Manual" {:file "doc/tests/asciidoctor-user-manual.adoc"}]]]
  :cljdoc/docstring-format :markdown}
