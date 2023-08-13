@@ -343,6 +343,15 @@ An autowidth table will only be as wide as it needs to be.footnote:[file, grabbe
 |Cell in column 3, row 2
 |===
 
+A table with some inline code to exercise https://github.com/cljdoc/cljdoc/issues/805
+
+|===
+|Col1
+
+|Single element: `x`
+|Multiple code elements: `x` `y`
+|===
+
 == Emojis
 
 Asciidoctor does not support codes like GitHub flavored markdown does, but it does have support for icons when font-awesome is enabled.
