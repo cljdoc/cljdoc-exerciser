@@ -3,3 +3,4 @@
 /target
 /.lsp
 /.clj-kondo/.cache
+/.cljdoc-preview
