@@ -189,8 +189,72 @@ GitHub flavored markdown supports emojis.
 
 And here we are.
 
-## Admonitions
-CommonMark does not support admonitions
+## Alerts
+GitHub Markdown has an alert extension which is conceptually equivalent to AsciiDoc admonitions.
+
+From most serious to least:
+
+> [!IMPORTANT]
+> Important things are said here.
+
+> [!WARNING]
+>  Warning to the wise.
+
+> [!CAUTION]
+> Aren't you a caution?
+
+> [!NOTE]
+> Note that this note is a note.
+
+> [!TIP]
+> Tip the scales with a tip.
+
+And how do alerts look with some code in them?
+
+> [!IMPORTANT]
+> This alert has some `code` in it.
+>
+> ```clojure
+> (how
+>   (does
+>     (this "look?)))
+> ```
+
+> [!WARNING]
+> This alert has some `code` in it.
+>
+> ```clojure
+> (how
+>   (does
+>     (this "look?)))
+> ```
+
+> [!CAUTION]
+> This alert has some `code` in it.
+>
+> ```clojure
+> (how
+>   (does
+>     (this "look?)))
+> ```
+
+> [!NOTE]
+> This alert has some `code` in it.
+>
+> ```clojure
+> (how
+>   (does
+>     (this "look?)))
+> ```
+
+> [!TIP]
+> This alert has some `code` in it.
+>
+> ```clojure
+> (how
+>   (does
+>     (this "look?)))
+> ```
 
 ## Text Roles
 
