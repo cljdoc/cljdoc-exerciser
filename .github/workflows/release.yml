@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout - with tag support
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
@@ -20,7 +20,7 @@ jobs:
       uses: fregante/setup-git-user@v2
 
     - name: Clojure deps cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: |
           ~/.m2/repository
@@ -29,13 +29,13 @@ jobs:
         restore-keys: $${ runner.os }}-cljdeps-release-
 
     - name: Setup Java
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
-        java-version: '11'
+        java-version: '23'
 
     - name: Install Clojure tools
-      uses: DeLaGuardo/setup-clojure@11.0
+      uses: DeLaGuardo/setup-clojure@12.5
       with:
           cli: 'latest'
           bb: 'latest'
