@@ -91,6 +91,14 @@ With code:
 >
 > Another paragraph in quote.
 
+Multiline paragraphs:
+
+> Para1line1
+> Para1line2
+>
+> Para2line1
+> Para2line2
+
 ## Images
 This local image should work on github and cljdoc.
 
@@ -255,6 +263,83 @@ And how do alerts look with some code in them?
 >   (does
 >     (this "look?)))
 > ```
+
+Since we wrote a flexmark extension to handle GitHub alerts, let's test out some scenarios.
+
+These should render as a quotes because they have no content:
+
+One line:
+> [!TIP]
+
+Two line:
+> [!TIP]
+>
+
+Multi-line:
+>
+> [!TIP]
+>
+>
+
+These should render as alerts:
+
+Content in first paragraph:
+
+> [!TIP]
+> para1line1
+
+> [!TIP]
+> para1line1
+> para1line2
+
+Content in subsequent paragraph
+
+> [!TIP]
+> 
+> para1line1
+
+> [!TIP]
+> 
+> para1line1
+> para1line2
+
+Content in subsequent paragraphs
+
+> [!TIP]
+> 
+> para1line1
+> para1line2
+>
+> para2line1
+> para2line2
+
+Content in first and subsequent paragraphs:
+
+> [!TIP]
+> para1line1
+> para1line2
+>
+> para2line1
+>
+> para3line1
+> para3line2
+
+Spaces and empty:
+>
+>
+>   [!TIP]
+>
+> 
+>
+> para3line1
+> para3line2
+>
+>
+
+Too many spaces before alert type means not an alert:
+
+>    [!TIP]
+> Not an alert
 
 ## Text Roles
 
