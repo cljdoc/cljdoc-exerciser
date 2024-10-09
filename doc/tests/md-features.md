@@ -338,7 +338,7 @@ Spaces and empty:
 
 Too many spaces before alert type means not an alert:
 
->    [!TIP]
+>     [!TIP]
 > Not an alert
 
 ## Text Roles
