@@ -341,6 +341,31 @@ Too many spaces before alert type means not an alert:
 >     [!TIP]
 > Not an alert
 
+Nested alerts are not a thing:
+
+> [!TIP]
+> A tip
+>
+> > [!NOTE]
+> > not a nested alert
+
+Looks like alerts in lists are not a thing either:
+
+1. list item 1
+
+    > [!TIP]
+    > A tip
+    
+    Normal, non-alert text.
+
+3. list item 2
+
+    > A normal quote in a list
+    
+    Normal, unquoted text.
+
+4. list item 3
+
 ## Text Roles
 
 There is no support for in CommonMark for coloring or custom styling of text.
