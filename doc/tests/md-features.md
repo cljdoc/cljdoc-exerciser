@@ -327,7 +327,7 @@ Content in first and subsequent paragraphs:
 Spaces and empty:
 >
 >
->   [!TIP]
+>    [!TIP]
 >
 > 
 >
