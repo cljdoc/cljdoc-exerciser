@@ -72,7 +72,7 @@ class HelloWorld {
 
 html
 ```html
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
 

@@ -104,7 +104,7 @@ class HelloWorld {
 .html
 [source,html]
 ----
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <body>
 
