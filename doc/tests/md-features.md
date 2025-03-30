@@ -45,6 +45,116 @@ user=> (reduce + 0 [1 2 3 4 5 6 7 8 6])
 user=>
 ```
 
+What about syntax highlighting for other languages/formats?
+
+java
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World");
+    }
+}
+```
+
+javascript
+```javascript
+console.log('Hello, World!');
+```
+
+groovy
+```groovy
+class HelloWorld {
+    static void main(String[] args) {
+        println "Hello, World!"
+    }
+}
+```
+
+html
+```html
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h1>Hello World!</h1>
+<p>How's it going?</p>
+
+</body>
+</html>
+```
+
+How about some common data encodings?
+Cribbed from https://tennen.medium.com/xml-json-toml-yaml-which-one-is-the-secret-key-to-your-data-success-bc2895d609ae
+
+xml
+```xml
+<album>
+    <title>The Symphony of Sounds</title>
+    <artist>The Virtuosos</artist>
+    <year>2022</year>
+    <tracks>
+        <track>
+            <title>Overture of Efficiency</title>
+            <duration>4:30</duration>
+        </track>
+        <track>
+            <title>Ballad of Simplicity</title>
+            <duration>5:20</duration>
+        </track>
+    </tracks>
+</album>
+```
+
+json
+```json
+{
+    "album": {
+        "title": "The Symphony of Sounds",
+        "artist": "The Virtuosos",
+        "year": 2022,
+        "tracks": [
+            {
+                "title": "Overture of Efficiency",
+                "duration": "4:30"
+            },
+            {
+                "title": "Ballad of Simplicity",
+                "duration": "5:20"
+            }
+        ]
+    }
+}
+```
+
+yaml
+```yaml
+album:
+  title: The Symphony of Sounds
+  artist: The Virtuosos
+  year: 2022
+  tracks:
+    - title: Overture of Efficiency
+      duration: 4:30
+    - title: Ballad of Simplicity
+      duration: 5:20
+```
+
+toml
+```toml
+[album]
+title = "The Symphony of Sounds"
+artist = "The Virtuosos"
+year = 2022
+
+[[album.tracks]]
+title = "Overture of Efficiency"
+duration = "4:30"
+
+[[album.tracks]]
+title = "Ballad of Simplicity"
+duration = "5:20"
+```
+
 ## Lists
 
 Bulleted:
