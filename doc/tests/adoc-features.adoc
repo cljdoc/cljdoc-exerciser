@@ -83,7 +83,6 @@ public class HelloWorld {
         System.out.println("Hello, World");
     }
 }
-
 ----
 
 .javascript
@@ -100,7 +99,6 @@ class HelloWorld {
         println "Hello, World!"
     }
 }
-
 ----
 
 .html
@@ -192,7 +190,6 @@ duration = "4:30"
 title = "Ballad of Simplicity"
 duration = "5:20"
 ----
-
 
 == Lists
 
