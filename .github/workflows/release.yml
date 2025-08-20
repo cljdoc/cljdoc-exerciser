@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout - with tag support
-      uses: actions/checkout@v4
+      uses: actions/checkout@v5
       with:
         fetch-depth: 0
 
@@ -35,7 +35,7 @@ jobs:
         java-version: '23'
 
     - name: Install Clojure tools
-      uses: DeLaGuardo/setup-clojure@13.2
+      uses: DeLaGuardo/setup-clojure@13.4
       with:
           cli: 'latest'
           bb: 'latest'
