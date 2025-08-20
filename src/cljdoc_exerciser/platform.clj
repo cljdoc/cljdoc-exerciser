@@ -1,5 +1,7 @@
 (ns cljdoc-exerciser.platform
-  "Clojure namespace - test when there are differences between platforms.")
+  "Clojure namespace - test when there are differences between platforms.
+
+  Wikilinks test: [[clj-only]] [[cljs-only]] [[docs-and-args-differ]] [[proto1-same2]] [[proto3-cljs-only]] [[proto3-clj-only]] [[proto3-same]]")
 
 (defn same "Docstring matches for all platforms, but links to sources should be different" [same])
 
