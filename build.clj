@@ -31,7 +31,7 @@
                   :version version
                   :basis basis
                   :src-dirs ["src"]
-                  :scm {:url "https://github.com:cljdoc/cljdoc-exerciser"
+                  :scm {:url "https://github.com/cljdoc/cljdoc-exerciser"
                         :connection "scm:git:git://github.com/cljdoc/cljdoc-exerciser.git"
                         :developerConnection "scm:git:ssh://git@github.com/cljdoc/cljdoc-exerciser.git"
                         :tag (format "v%s" version)}
