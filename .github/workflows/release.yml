@@ -12,7 +12,7 @@ jobs:
 
     steps:
     - name: Checkout - with tag support
-      uses: actions/checkout@v5
+      uses: actions/checkout@v6
       with:
         fetch-depth: 0
 
@@ -20,7 +20,7 @@ jobs:
       uses: fregante/setup-git-user@v2
 
     - name: Clojure deps cache
-      uses: actions/cache@v4
+      uses: actions/cache@v5
       with:
         path: |
           ~/.m2/repository
@@ -35,7 +35,7 @@ jobs:
         java-version: '24'
 
     - name: Install Clojure tools
-      uses: DeLaGuardo/setup-clojure@13.4
+      uses: DeLaGuardo/setup-clojure@13.5.2
       with:
           cli: 'latest'
           bb: 'latest'
