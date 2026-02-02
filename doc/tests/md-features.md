@@ -303,13 +303,19 @@ GitHub flavored markdown supports emojis.
 Cljdoc renders them the same way GitHub does:
 
 `:apple:` :apple:
-`:space_invader:` :space-invader:
+`:space_invader:` :space_invader:
 `:tangerine:` :tangerine:
 `:octocat:` :octocat:
 `:elf_man:` :elf_man:
 `:elf_woman:` :elf_woman:
 
-Unrecognized :wont-find-me: emojis are not replaced.
+Unrecognized :wont_find_me: emojis are not replaced.
+
+And emojis are not rendered in literal blocks:
+```clojure
+(defn foo
+  "Boop :space_invader:" [])
+```
 
 <h2 id="anchorid">Anchored heading</h2>
 

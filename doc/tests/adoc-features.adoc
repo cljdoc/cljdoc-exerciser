@@ -480,13 +480,20 @@ Note that GitHub does support their own emojis in adoc files as a post-processin
 Cljdoc renders them the same way GitHub does:
 
 `:apple:` :apple:
-`:space_invader:` :space-invader:
+`:space_invader:` :space_invader:
 `:tangerine:` :tangerine:
 `:octocat:` :octocat:
 `:elf_man:` :elf_man:
 `:elf_woman:` :elf_woman:
 
 Unrecognized :wont-find-me: emojis are not replaced.
+
+And emojis are not rendered in literal blocks:
+[source,clojure]
+----
+(defn foo
+  "Boop :space_invader:" [])
+----
 
 [#anchorid]
 == Anchored heading
