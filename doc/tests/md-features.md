@@ -300,8 +300,16 @@ Nor tables with captions:
 ## Emojis
 
 GitHub flavored markdown supports emojis.
+Cljdoc renders them the same way GitHub does:
 
-:space_invader: :apple: :space_invader: :tangerine: :space_invader:
+`:apple:` :apple:
+`:space_invader:` :space-invader:
+`:tangerine:` :tangerine:
+`:octocat:` :octocat:
+`:elf_man:` :elf_man:
+`:elf_woman:` :elf_woman:
+
+Unrecognized :wont-find-me: emojis are not replaced.
 
 <h2 id="anchorid">Anchored heading</h2>
 

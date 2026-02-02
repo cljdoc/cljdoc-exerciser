@@ -476,9 +476,17 @@ Asciidoctor does not support codes like GitHub flavored markdown does, but it do
 
 icon:heart[] icon:heart[size=2x]
 
-Note that GitHub does support their own emojis in adoc files as a post-processing feature:
+Note that GitHub does support their own emojis in adoc files as a post-processing feature.
+Cljdoc renders them the same way GitHub does:
 
-bear :bear: smirk :smirk: grin :grin:
+`:apple:` :apple:
+`:space_invader:` :space-invader:
+`:tangerine:` :tangerine:
+`:octocat:` :octocat:
+`:elf_man:` :elf_man:
+`:elf_woman:` :elf_woman:
+
+Unrecognized :wont-find-me: emojis are not replaced.
 
 [#anchorid]
 == Anchored heading

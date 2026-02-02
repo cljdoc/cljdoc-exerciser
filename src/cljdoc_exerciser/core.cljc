@@ -132,5 +132,7 @@
 (defn exercise7
   "How does a docstring handle embedded html?
 
-  It is not <b>bold</b> enough to render it."
+  It is not <b>bold</b> enough to render it.
+
+  And cljdoc does not render any emojis :space_invader: in docstrings."
   [])

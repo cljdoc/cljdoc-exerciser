@@ -1,0 +1,7 @@
+Text files are rendered as is without any markdown processing.
+
+# no headings
+
+- **no bold**
+- No emojis :space_invader:
+- etc...
