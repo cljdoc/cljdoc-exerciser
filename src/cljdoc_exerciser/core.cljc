@@ -14,7 +14,11 @@
   - a var in a different namespace [[cljdoc-exerciser.ns2/whatever]]
 
   Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link,
-  this includes any typos like [[cljdoc-exerciser.ns2/whatevs]] [[cljdoc-exorcisor.core]]")
+  this includes any typos like [[cljdoc-exerciser.ns2/whatevs]] [[cljdoc-exorcisor.core]]
+
+  With wikilinks and root relative links, we discourage and don't need fully qualified links, but they should work:
+  1. [A fully qualified link to cljdoc-exerciser.core/excercise3](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3)
+  2. [A fully qualified link to cljdoc-exerciser.core](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core)")
 
 (defn exercise1
   "Will someone ever link to me?"
@@ -88,7 +92,12 @@
   - a var in a different namespace [[cljdoc-exerciser.ns2/whatever]]
 
   Wikilink syntax [[that does not resolve to any var or ns]] is not converted to a link,
-  this includes any typos like [[cljdoc-exerciser.ns2/whatevs]] [[cljdoc-exorcisor.core]]"
+  this includes any typos like [[cljdoc-exerciser.ns2/whatevs]] [[cljdoc-exorcisor.core]]
+
+  **Fully Qualified Links**
+  With wikilinks and root relative links, we discourage and don't need fully qualified links, but they should work:
+  1. [A fully qualified link to cljdoc-exerciser.core/excercise3](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core#exercise3)
+  2. [A fully qualified link to cljdoc-exerciser.core](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser/CURRENT/api/cljdoc-exerciser.core)"
   []
   (+ 1 2 3))
 
