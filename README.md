@@ -2,9 +2,9 @@
 
 [![cljdoc badge](https://cljdoc.org/badge/org.cljdoc/cljdoc-exerciser?)](https://cljdoc.org/d/org.cljdoc/cljdoc-exerciser)
 
-This is a test project to exercise various cljdoc features and formatting.
+This is a test project to exercise cljdoc features and formatting.
 
-It should be extended as the cljdoc community sees fit.
+It should updated and extended by the cljdoc community as it sees fit.
 
 ## Building & Releasing
 
