@@ -28,8 +28,7 @@
 ;; constants
 ;;
 
-(def cljdoc-root-temp-dir "./.cljdoc-preview")
-(def cljdoc-db-dir (str cljdoc-root-temp-dir  "/db"))
+(def cljdoc-temp-data-dir "./.cljdoc-preview")
 (def cljdoc-container {:name "cljdoc-server"
                        :image "cljdoc/cljdoc"
                        :port 8000})
@@ -126,7 +125,7 @@
     (status/die 1
                 "%s does not appear to be running"
                 (:name container)))
-  (shell/command "docker" "stop" (:name container) "--time" "0"))
+  (shell/command "docker" "stop" (:name container) "--timeout" "0"))
 
 (defn wait-for-server
   "Wait for container's http server to become available, assumes server has valid root page"
@@ -159,13 +158,12 @@
   (status/line :head "Ingesting project %s %s\ninto local cljdoc database" project version)
   (shell/command "docker"
                  "run" "--rm"
-                 "-v" (str cljdoc-db-dir ":/app/data")
-                 "-v" (str (home-dir) "/.m2:/root/.m2")
-                 "-v" (str (cwd) ":" (cwd) ":ro")
+                 "--volume" (str cljdoc-temp-data-dir ":/app/data")
+                 "--volume" (str (home-dir) "/.m2:/home/cljdoc/.m2")
+                 "--platform" "linux/amd64"
                  "--entrypoint" "clojure"
                  (:image container)
-                 "-M:cli"
-                 "ingest"
+                 "-Sforce" "-M:cli" "ingest"
                   ;; project and version are used to locate the maven artifact (presumably locally)
                  "--project" project "--version" version
                   ;; use git origin to support folks working from forks/PRs
@@ -179,16 +177,16 @@
                 "%s is already running"
                 (:name container)))
   (status/line :head "Checking for updates")
-  (docker-pull-latest container)
+  #_(docker-pull-latest container)
   (status/line :head "Starting %s on port %d" (:name container) (:port container))
   (shell/command "docker"
                  "run" "--rm"
                  "--name" (:name container)
-                 "-d"
-                 "-p" (str (:port container) ":8000")
-                 "-v" (str cljdoc-db-dir ":/app/data")
-                 "-v" (str (home-dir) "/.m2:/root/.m2")
-                 "-v" (str (cwd) ":" (cwd) ":ro")
+                 "--detach"
+                 "--publish" (str (:port container) ":8000")
+                 "--volume" (str cljdoc-temp-data-dir ":/app/data")
+                 "--volume" (str (home-dir) "/.m2:/home/cljdoc/.m2")
+                 "--platform" "linux/amd64"
                  (:image container)))
 
 (defn view-in-browser [url]
@@ -211,8 +209,8 @@
       (status/line :warn (string/join "\n" warnings)))))
 
 (defn cleanup-resources []
-  (when (fs/exists? cljdoc-db-dir)
-    (fs/delete-tree cljdoc-db-dir)))
+  (when (fs/exists? cljdoc-temp-data-dir)
+    (fs/delete-tree cljdoc-temp-data-dir)))
 
 (def args-usage "Valid args: (start|ingest|view|stop|status|--help)
 
@@ -234,11 +232,13 @@ Must be run from project root directory.")
     (cond
       (get opts "start")
       (do
+        (fs/create-dirs cljdoc-temp-data-dir)
         (start-cljdoc-server cljdoc-container)
         nil)
 
       (get opts "ingest")
       (do
+        (fs/create-dirs cljdoc-temp-data-dir)
         (git-warnings)
         (local-install)
         (cljdoc-ingest cljdoc-container (get-project) (built-version))
